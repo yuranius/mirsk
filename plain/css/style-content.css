@@ -134,7 +134,6 @@ body {
 }
 
 .block-menu__list {
-  border: 1px solid red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -181,14 +180,29 @@ body {
   margin-left: 10px;
 }
 
+.item__block-text span {
+  color: #F4A251;
+}
+
 .block-list__feedback {
+  width: 445px;
   min-width: 445px;
-  border: 2px solid rosybrown;
+}
+
+.feedback__text {
+  font-size: 20px;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 22px 60px 20px 60px;
 }
 
 .feedback__form {
   width: 340px;
   max-height: 305px;
   margin-left: 52px;
-  margin-top: 107px;
+  margin-top: 0px;
+}
+
+.cover-arrow {
+  text-align: center;
 }
