@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "RobotoRegular";
   font-style: normal;
@@ -205,4 +206,202 @@ body {
 
 .cover-arrow {
   text-align: center;
+}
+
+.prices-examples {
+  margin-top: 80px;
+}
+
+.prices-examples__block {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto 1fr;
+      grid-template-rows: auto auto 1fr;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+      grid-template-areas: "header notepad" "slaider-menu notepad" "slaider notepad";
+}
+
+.prices-examples__header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 70px;
+  margin-left: 90px;
+}
+
+.prices-examples__title {
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 55px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #007E82;
+  text-transform: uppercase;
+}
+
+.prices-examples__title_two {
+  opacity: 0.6;
+  margin-left: 30px;
+}
+
+.prices-examples__title_three {
+  opacity: 0.3;
+  margin-left: 60px;
+}
+
+.prices-examples__text {
+  margin-left: 33px;
+  margin-right: 110px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 110%;
+  color: #404A54;
+}
+
+.prices-examples__notepad {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 2;
+  grid-area: notepad;
+  min-height: 700px;
+  width: 700px;
+  height: 967px;
+  right: 0;
+  background-color: #404A54;
+  position: relative;
+}
+
+.prices-examples__slaider {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: slaider;
+  margin-right: 45px;
+  position: relative;
+  padding: 0px 0px;
+  min-width: 0;
+}
+
+.prices-examples__slaider img {
+  width: 100%;
+  height: 100%;
+}
+
+.prices-examples__slaider-menu {
+  margin-top: 90px;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: slaider-menu;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slaider-menu__button {
+  width: 110px;
+  height: 50px;
+  border: 1px solid black;
+}
+
+.slaider-menu__button button {
+  min-width: 100%;
+  min-height: 100%;
+  font-family: "EuphoriaScript";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
+  background-color: #FFFFFF;
+}
+
+.block__text-two {
+  display: none;
+}
+
+.prices-examples__slaider .slick-arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  z-index: 10;
+  font-size: 0;
+  width: 50px;
+  height: 100px;
+}
+
+.prices-examples__slaider .slick-arrow::after {
+  display: none;
+}
+
+.prices-examples__slaider .slick-arrow.slick-prev {
+  left: 10px;
+  background: url("/img/finished/2-prices-and-examples/left-arrow.svg") 0 0/100% no-repeat;
+}
+
+.prices-examples__slaider .slick-arrow.slick-next {
+  right: 10px;
+  background: url("/img/finished/2-prices-and-examples/right-arrow.svg") 0 0/100% no-repeat;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+/* Слайдер */
+/* Слайдер запущен */
+/* Слайдер с точками */
+/* Ограничивающая оболочка */
+.slick-list {
+  overflow: hidden;
+}
+
+/* Лента слайдов */
+.slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* Слайд */
+/* Слайд активный (показывается) */
+/* Слайд основной */
+/* Слайд по центру */
+/* Клонированный слайд */
+/* Стрелка не активная */
+.page__image {
+  margin-top: 25px;
+}
+
+.page__image img {
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.page__title {
+  margin-top: 510px;
+  margin-left: 83px;
+  line-height: 55px;
+  font-weight: 700;
+  font-size: 55px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.page__arrow {
+  margin-top: 50px;
+  margin-left: 83px;
+}
+
+.page__block-image {
+  position: absolute;
+  width: 116px;
+  height: 32px;
+  right: 0;
+  bottom: 55px;
+  border: 1px solid #F4A251;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }

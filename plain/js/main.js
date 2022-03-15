@@ -254,14 +254,14 @@ var skmir = new function() {
                 $(this).addClass('hasChild');
             }
         });
-        
+
         $('[data-img]').hide();
         $('.mainMenu li a').hover(function(){
             if ($(this).data('link')) {
                 var li_id = $(this).data('link')
                 $('[data-img]').hide();
                 if(typeof($('[data-img="'+li_id+'"]').attr('data-img')) == 'string'){
-                   $('[data-img="'+li_id+'"]').show(); 
+                   $('[data-img="'+li_id+'"]').show();
                 }
                 else{console.log('2');
                     var parentLink = $(this).parents('.hasChild').children('a').attr('data-link');
@@ -269,6 +269,56 @@ var skmir = new function() {
                 }
             }
         });
+
+
+        jQuery(document).ready(function($){
+            $('.prices-examples__slaider').slick({
+                arrows:true,
+                dots:false,
+                speed:1000,
+                easing:'ease',
+                autoplay:false,
+                autoplaySpeed: 1000,
+                waitForAnimate:false,
+                slidesToShow:1,
+                // vertical:true,
+                // verticalSwiping:true,
+                // fade:true,
+
+                responsive:[ //^адаптив
+                    {
+                        breakpoint: 768,
+                        settings:{
+                            dots:false,
+                            arrows:false,
+                        }
+                    }
+                ]
+            });
+
+            $('button[data-slide]').click(function(e) {
+                e.preventDefault();
+                var slideno = $(this).data('slide');
+                $('.prices-examples__slaider').slick('slickGoTo', slideno - 1);
+
+                const buttonWrapper = event.target.closest('.slaider-menu__button');
+                counter = buttonWrapper.querySelector('[data-slide]');
+
+                if (slideno == counter.dataset.slide)
+                $(counter).addClass('active')
+                else
+                $(counter).remuveClass('active')
+
+                console.log(counter);
+
+
+              });
+
+
+        });
+
+
+
 
     };
 
