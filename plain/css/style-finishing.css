@@ -4,126 +4,92 @@
     font-style: normal;
     font-weight: normal;
     src: url("../fonts/Akrobat-Regular.eot?") format("eot"), url("../fonts/Akrobat-Regular.woff") format("woff"), url("../fonts/Akrobat-Regular.ttf") format("truetype"), url("../fonts/Akrobat-Regular.svg#Glober") format("svg");
-}
-@font-face {
+  }
+  @font-face {
     font-family: "Akrobat";
     font-style: normal;
     font-weight: bold;
     src: url("../fonts/Akrobat-Bold.eot?") format("eot"), url("../fonts/Akrobat-Bold.woff") format("woff"), url("../fonts/Akrobat-Bold.ttf") format("truetype"), url("../fonts/Akrobat-Bold.svg#Glober") format("svg");
-}
-@font-face {
+  }
+  @font-face {
     font-family: "Akrobat";
     font-style: normal;
     font-weight: 700;
     src: url("../fonts/Akrobat-SemiBold.eot?") format("eot"), url("../fonts/Akrobat-SemiBold.woff") format("woff"), url("../fonts/Akrobat-SemiBold.ttf") format("truetype"), url("../fonts/Akrobat-SemiBold.svg#Glober") format("svg");
-}
-@font-face {
+  }
+  @font-face {
     font-family: "Akrobat";
     font-style: normal;
     font-weight: 900;
     src: url("../fonts/Akrobat-ExtraBold.eot?") format("eot"), url("../fonts/Akrobat-ExtraBold.woff") format("woff"), url("../fonts/Akrobat-ExtraBold.ttf") format("truetype"), url("../fonts/Akrobat-ExtraBold.svg#Glober") format("svg");
-}
-@font-face {
+  }
+  @font-face {
     font-family: "Akrobat";
     font-style: normal;
     font-weight: 100;
     src: url("../fonts/Akrobat-Thin.eot?") format("eot"), url("../fonts/Akrobat-Thin.woff") format("woff"), url("../fonts/Akrobat-Thin.ttf") format("truetype"), url("../fonts/Akrobat-Thin.svg#Glober") format("svg");
-}
-@font-face {
+  }
+  @font-face {
     font-family: "Akrobat";
     font-style: normal;
     font-weight: 300;
     src: url("../fonts/Akrobat-Light.eot?") format("eot"), url("../fonts/Akrobat-Light.woff") format("woff"), url("../fonts/Akrobat-Light.ttf") format("truetype"), url("../fonts/Akrobat-Light.svg#Glober") format("svg");
-}
-@font-face {
+  }
+  @font-face {
     font-family: "Akrobat";
     font-style: normal;
     font-weight: 800;
     src: url("../fonts/Akrobat-Black.eot?") format("eot"), url("../fonts/Akrobat-Black.woff") format("woff"), url("../fonts/Akrobat-Black.ttf") format("truetype"), url("../fonts/Akrobat-Black.svg#Glober") format("svg");
-}
+  }
 
 
-/*------------ Reset --------------*/
-html {height: 0;}
-* { margin: 0; outline: none; }
-body, p, ul, li, ol, pre, caption, h1, h2, h3, h4, h5, h6, form, div, fieldset, legend { padding: 0; }
-h1, h2, h3, h4, h5, h6 {  }
-[data-cbox] { outline: none; }
-body { overflow-x:hidden; display: block; position: relative; min-height: 100%; width: 100%; min-width: 960px;
+  /*------------ Reset --------------*/
+  html {height: 0;}
+  * { margin: 0; outline: none; }
+  body, p, ul, li, ol, pre, caption, h1, h2, h3, h4, h5, h6, form, div, fieldset, legend { padding: 0; }
+  h1, h2, h3, h4, h5, h6 {  }
+  [data-cbox] { outline: none; }
+  body { overflow-x:hidden; display: block; position: relative; min-height: 100%; width: 100%; min-width: 960px;
     font: normal 1em/1 'Arial', sans-serif; background: #fff; background-size: cover; z-index: -10000; }
-img, fieldset { border: 0; }
-input::-moz-focus-inner, button::-moz-focus-inner { padding: 0; border: 0; }
-a { color: #007b81; text-decoration: none; }
-a:hover { color: #000; text-decoration: none; }
+  img, fieldset { border: 0; }
+  input::-moz-focus-inner, button::-moz-focus-inner { padding: 0; border: 0; }
+  a { color: #007b81; text-decoration: none; }
+  a:hover { color: #000; text-decoration: none; }
 
 
-/*--------------- Slick slider --------------*/
-.slick-arrow {
-    position: absolute;
-    width: 65px;
-    height: 65px;
-    left: 40px;
-    top: 50%;
-    margin-top: -32px;
-    border: none;
-    text-indent: -9999px;
-    overflow: hidden;
-    z-index: 10;
-    background: rgba(0,0,0,0.3);
-    border-radius: 50%;
-}
-.slick-arrow:after {
-    content: '';
-    width: 19px;
-    height: 34px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-top: -17px;
-    margin-left: -13px;
-    background: url(../../img/sprite.png) 0 -66px no-repeat;
-}
-.slick-arrow.slick-next {
-    left: auto;
-    right: 40px;
-    transform: rotate(180deg);
-}
-.slick-arrow:hover {
-    background: rgba(0,0,0,0.8);
-}
-.slick-disabled {
-    display: none !important;
-}
+  /*-------- Conteiner ---------*/
 
-/*-------- Conteiner ---------*/
-
-.topblock-container, .menu-container {
+  .topblock .container, .menublock .container {
     max-width: 890px;
     margin: 0 auto;
-}
+    border: 1px solid red;
+  }
 
-/*-------- Header ---------*/
-header .topblock {
+  /*-------- Header ---------*/
+  header .topblock {
     background: #007b81;
     height: 50px;
     box-shadow: 0 1px 6px rgba(0,0,0,0.4);
     position: relative;
     z-index: 2;
-}
+  }
 
-header .row-contacts, header .row-menu{
+  .row-contacts__item, .row-menu{
     display: flex;
     margin-left: 180px;
     justify-content: space-between;
-    border: 1px solid black;
     font-size: 10px;
     max-width: 100%;
-}
+  }
 
-header .topblock .row__phone:nth-child(2) .phone {
+  .row-contacts{
+    position: relative;
+  }
+
+  header .topblock .row__phone:nth-child(2) .phone {
     margin-left: 13px;
-}
-header .topblock .phone {
+  }
+  header .topblock .phone {
     font: normal 1.8em/1.4 'Akrobat', sans-serif;
     color: #fff;
     text-decoration: none;
@@ -132,8 +98,8 @@ header .topblock .phone {
     letter-spacing: 0.5px;
     display: block;
     margin-top: 11px;
-}
-header .topblock .mail {
+  }
+  header .topblock .mail {
     font: normal 1.8em/1.4 'Akrobat', sans-serif;
     color: #fff;
     position: relative;
@@ -143,8 +109,8 @@ header .topblock .mail {
     margin-top: 11px;
     text-decoration: none;
     margin-left: 30px;
-}
-header .topblock .phone:before {
+  }
+  header .topblock .phone:before {
     content: '';
     position: absolute;
     left: 0;
@@ -152,8 +118,8 @@ header .topblock .phone:before {
     width: 7px;
     height: 18px;
     background: url(../../img/sprite.png) -20px 0 no-repeat;
-}
-header .topblock .mail:before {
+  }
+  header .topblock .mail:before {
     content: '';
     position: absolute;
     left: 0;
@@ -161,69 +127,73 @@ header .topblock .mail:before {
     width: 18px;
     height: 13px;
     background: url(../../img/sprite.png) 0 0 no-repeat;
-}
-header .logo {
+  }
+  .row-contacts__logo {
     width: 180px;
     height: 170px;
     position: absolute;
     z-index: 10;
+    left: 0;
     background: #0e9298;
-}
-header .logo a {
+  }
+  .row-contacts__logo a{
     vertical-align: middle;
     text-align: center;
     width: 100%;
-}
-header .menu{
+  }
+  .menublock{
     position: relative;
     z-index: 1;
     background: #475b5f;
-}
+  }
 
 
-.mainMenu {
-    padding-left: 0px;
+  .mainMenu {
+    /* padding-left: 0px; */
     width: 100%;
     /* display: table; */
     display: flex;
     justify-content: space-evenly;
+    border: 1px solid yellow;
 
-}
-.mainMenu > li {
+  }
+  .mainMenu > li {
 
     vertical-align: middle;
     font: bold 1.9em/1.4 'Akrobat', sans-serif;
     position: relative;
-    border: 1px solid black;
-}
-.mainMenu > li:after {
+    list-style-type:none;
+
+  }
+  .mainMenu > li:after {
     content: '';
     width: 1px;
     height: 30px;
     position: absolute;
-    right: 0;
+    right: -15px;
     top: 50%;
     margin-top: -15px;
     background: url(../../img/sprite.png) -99px 0 no-repeat;
-}
-.mainMenu > li:hover:after, .mainMenu > li.active:after, .mainMenu > li.current:after {
+  }
+  .mainMenu > li:hover:after, .mainMenu > li.active:after, .mainMenu > li.current:after {
     content: none;
-}
-.mainMenu > li:last-child:after {
+  }
+  .mainMenu > li:last-child:after {
     content: none;
-}
-.mainMenu > li > a {
-    width: 100%;
+  }
+  .mainMenu > li > a {
+    max-width: 100%;
     text-decoration: none;
     color: #fff;
     text-align: center;
     display: block;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 29px 14px;
+    padding: 29px 0px;
     position: relative;
-}
-.mainMenu > li.active > a:after {
+
+  }
+  .mainMenu > li.active > a:after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -233,53 +203,53 @@ header .menu{
     border-style: solid;
     border-width: 0 8.5px 9px 8.5px;
     border-color: transparent transparent #ffeedd transparent;
-}
-.mainMenu > li > a:hover, .mainMenu > li.active > a, .mainMenu > li.current > a {
+  }
+  .mainMenu > li > a:hover, .mainMenu > li.active > a, .mainMenu > li.current > a {
     background: #e4a364;
-}
-.mainMenu > li.active > .subMenu {
+  }
+  .mainMenu > li.active > .subMenu {
     display: table;
-}
-.mainMenu > li > .subMenu {
+  }
+  .mainMenu > li > .subMenu {
     position: absolute;
     left: 0;
     top: 100%;
     background: #ffeedd;
     padding: 25px;
     display: none;
-}
-.mainMenu > li > .subMenu > ul {
+  }
+  .mainMenu > li > .subMenu > ul {
     font-size: 10px;
     list-style: none;
     display: table-cell;
     vertical-align: top;
     width: 250px;
     padding-right: 20px;
-}
-.mainMenu > li > .subMenu > ul > li {
+  }
+  .mainMenu > li > .subMenu > ul > li {
     width: 250px;
     margin-bottom: 8px;
-}
-.mainMenu > li > .subMenu > ul > li > a {
+  }
+  .mainMenu > li > .subMenu > ul > li > a {
     display: block;
     color: #152022;
     font: normal 1.5em 'Akrobat', sans-serif;
     text-decoration: none;
-}
-.mainMenu > li > .subMenu > ul > li > a:hover {
+  }
+  .mainMenu > li > .subMenu > ul > li > a:hover {
     color: #007b81;
-}
-.mainMenu > li > .subMenu > .plate {
+  }
+  .mainMenu > li > .subMenu > .plate {
     display: table-cell;
     vertical-align: middle;
     width: 160px;
     padding: 0 30px;
     border-left: 1px solid #decbb9;
-}
-.mainMenu > li > .subMenu > .plate a {
+  }
+  .mainMenu > li > .subMenu > .plate a {
     text-decoration: none;
-}
-.mainMenu > li > .subMenu > .plate a span {
+  }
+  .mainMenu > li > .subMenu > .plate a span {
     display: block;
     color: #bc7735;
     font-size: 18px;
@@ -288,18 +258,18 @@ header .menu{
     margin: 0 auto;
     text-align: center;
     line-height: 1.1;
-}
-.mainMenu > li > .subMenu > .plate a:hover span {
+  }
+  .mainMenu > li > .subMenu > .plate a:hover span {
     color: #9f662d;
-}
-.mainMenu > li > .subMenu > .plate img {
+  }
+  .mainMenu > li > .subMenu > .plate img {
     margin-bottom: 5px;
     max-width: 120px
-}
+  }
 
-/*-------------- Adaptiv ---------------*/
+  /*-------------- Adaptiv ---------------*/
 
-@media (max-width: 1024px) {
+  @media (max-width: 1024px) {
     body{
         min-width: 560px;
     }
@@ -310,7 +280,7 @@ header .menu{
         padding-right: 20px;
     }
 
-}
+  }
 
-/*-------------- Page ---------------*/
+  /*-------------- Page ---------------*/
 
