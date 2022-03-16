@@ -296,6 +296,32 @@ var skmir = new function() {
                 ]
             });
 
+            $('.example-project__slaider').slick({
+                arrows:true,
+                dots:false,
+                speed:1000,
+                easing:'ease',
+                autoplay:false,
+                autoplaySpeed: 1000,
+                waitForAnimate:false,
+                slidesToShow:1,
+                // vertical:true,
+                // verticalSwiping:true,
+                // fade:true,
+
+                responsive:[ //^адаптив
+                    {
+                        breakpoint: 768,
+                        settings:{
+                            dots:false,
+                            arrows:false,
+                        }
+                    }
+                ]
+            });
+
+
+
             $('button[data-slide]').click(function(e) {
                 e.preventDefault();
                 var slideno = $(this).data('slide');
