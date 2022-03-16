@@ -30,8 +30,10 @@ body {
 }
 
 .conteiner {
-  max-width: 1645px;
+  max-width: 1685px;
   margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .cover-header {
@@ -199,9 +201,7 @@ body {
 
 .feedback__form {
   width: 340px;
-  max-height: 305px;
   margin-left: 52px;
-  margin-top: 0px;
 }
 
 .cover-arrow {
@@ -274,6 +274,7 @@ body {
   right: 0;
   background-color: #404A54;
   position: relative;
+  z-index: -1;
 }
 
 .prices-examples__slaider {
@@ -396,6 +397,168 @@ body {
 }
 
 .page__block-image {
+  position: absolute;
+  width: 116px;
+  height: 32px;
+  right: 0;
+  bottom: 55px;
+  border: 1px solid #F4A251;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.hanger {
+  margin-top: 75px;
+}
+
+.hanger__image {
+  width: 100%;
+  height: 65px;
+}
+
+.hanger__image img {
+  width: 100%;
+  height: 100%;
+}
+
+.flip-chart__board {
+  position: relative;
+  width: 100%;
+  background-color: #404A54;
+  margin-top: 30px;
+  min-height: 750px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flip-chart__board_two {
+  min-height: 1400px;
+}
+
+.flip-chart__clip {
+  content: '';
+  position: absolute;
+  top: -32.5px;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-chart__clip_one {
+  left: 55px;
+}
+
+.flip-chart__clip_two {
+  left: 95.5%;
+}
+
+.flip-chart__text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 26%;
+          flex: 1 1 26%;
+  margin-top: 90px;
+  margin-left: 90px;
+}
+
+.flip-chart__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.flip-chart__title_two {
+  font-size: 40px;
+}
+
+.flip-chart__subtitle {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-top: 50px;
+}
+
+.flip-chart__subtitle span {
+  margin-top: 30px;
+  display: block;
+  padding-right: 240px;
+}
+
+.flip-chart__menu {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 74%;
+          flex: 1 1 74%;
+}
+
+.flip-chart__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto auto auto;
+      grid-template-rows: auto auto auto auto;
+  margin-top: 22px;
+}
+
+.flip-chart__list_two {
+  -ms-grid-rows: auto auto auto auto auto;
+      grid-template-rows: auto auto auto auto auto;
+}
+
+.flip-chart__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 50px;
+  padding-right: 90px;
+}
+
+.flip-chart__logo img {
+  width: 55px;
+  height: 55px;
+}
+
+.flip-chart__description {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 110%;
+  color: #FFFFFF;
+  margin-left: 35px;
+}
+
+.flip-chart__description h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: #F4A251;
+}
+
+.flip-chart__description span {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 15px;
+  line-height: 15px;
+  display: block;
+}
+
+.flip-chart__description a {
+  font-size: 14px;
+  opacity: 0.8;
+  color: #C3E4F7;
+  text-decoration: underline;
+}
+
+.flip-chart__rectangle {
   position: absolute;
   width: 116px;
   height: 32px;
