@@ -275,7 +275,7 @@ var skmir = new function() {
             $('.prices-examples__slaider').slick({
                 arrows:true,
                 dots:false,
-                speed:1000,
+                speed:500,
                 easing:'ease',
                 autoplay:false,
                 autoplaySpeed: 1000,
@@ -285,7 +285,7 @@ var skmir = new function() {
                 // verticalSwiping:true,
                 // fade:true,
 
-                responsive:[ //^адаптив
+                responsive:[
                     {
                         breakpoint: 768,
                         settings:{
@@ -296,7 +296,18 @@ var skmir = new function() {
                 ]
             });
 
+            $('.prices-examples__slaider').on('afterChange', function() {
+                var dataId = $('.slick-current').attr("data-slick-index");
+                if (dataId == dataId) {
+                    dataId ++;
+                    $(`[data-slide]`).removeClass('active')
+                    $(`[data-slide="${dataId}"]`).addClass('active')
+                }
+            });
+
+
             $('.example-project__slaider').slick({
+
                 arrows:true,
                 dots:false,
                 speed:1000,
@@ -305,11 +316,12 @@ var skmir = new function() {
                 autoplaySpeed: 1000,
                 waitForAnimate:false,
                 slidesToShow:1,
+
                 // vertical:true,
                 // verticalSwiping:true,
                 // fade:true,
 
-                responsive:[ //^адаптив
+                responsive:[
                     {
                         breakpoint: 768,
                         settings:{
@@ -322,30 +334,71 @@ var skmir = new function() {
 
 
 
-            $('button[data-slide]').click(function(e) {
-                e.preventDefault();
-                var slideno = $(this).data('slide');
-                $('.prices-examples__slaider').slick('slickGoTo', slideno - 1);
-
-                const buttonWrapper = event.target.closest('.slaider-menu__button');
-                counter = buttonWrapper.querySelector('[data-slide]');
-
-                if (slideno == counter.dataset.slide)
-                $(counter).addClass('active')
-                else
-                $(counter).remuveClass('active')
-
-                console.log(counter);
 
 
-              });
 
 
-        });
+                $('button[data-slide]').click(function(e) {
+                    e.preventDefault();
+                    var slideno = $(this).data('slide');
+                    $('.prices-examples__slaider').slick('slickGoTo', slideno - 1);
+
+                });
 
 
+                      //* mediascrin < 1024
+                $(function(){
+                    const button = document.querySelector('.board__button');
+                    if($(window).width() < 1024) {
+                    $(button).addClass('max-width');
+                    console.log('max-width < 1024px');
+                    }
+                });
+
+                $(document).ready(function(){
+                    $("#yak").on("click", function (event) {
+                        event.preventDefault();
+                        let id  = $(this).attr('href'),
+                            top = $('#yak-id').offset().top;
+                        $('body,html').animate({scrollTop: top}, 1000);
+                    });
+                });
+
+                });
 
 
     };
 
 };
+
+
+
+var $slider = $('.prices-examples__slaider');
+
+if ($slider.length) {
+var currentSlide;
+var slidesCount;
+var sliderCounter = document.createElement('div');
+sliderCounter.classList.add('slider__counter');
+
+
+
+var updateSliderCounter = function(slick, currentIndex) {
+    currentSlide = slick.slickCurrentSlide() + 1;
+    slidesCount = slick.slideCount;
+    $(sliderCounter).text(currentSlide + '/' +slidesCount)
+};
+
+console.log(currentSlide);
+
+$slider.on('init', function(event, slick) {
+    $slider.append(sliderCounter);
+    updateSliderCounter(slick);
+});
+
+$slider.on('afterChange', function(event, slick, currentSlide) {
+    updateSliderCounter(slick, currentSlide);
+});
+
+$slider.slick();
+}
