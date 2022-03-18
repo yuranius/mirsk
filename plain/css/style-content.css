@@ -210,13 +210,14 @@ body {
 
 .prices-examples {
   margin-top: 80px;
+  max-height: 967px;
 }
 
 .prices-examples__block {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: auto auto 1fr;
-      grid-template-rows: auto auto 1fr;
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
   -ms-grid-columns: auto 1fr;
       grid-template-columns: auto 1fr;
       grid-template-areas: "header notepad" "slaider-menu notepad" "slaider notepad";
@@ -270,7 +271,6 @@ body {
   grid-area: notepad;
   min-height: 700px;
   width: 700px;
-  height: 967px;
   right: 0;
   background-color: #404A54;
   position: relative;
@@ -291,7 +291,11 @@ body {
   border: none;
 }
 
-.prices-examples__slaider img {
+.prices-examples__item {
+  height: 530px;
+}
+
+.prices-examples__item img {
   width: 100%;
   height: 100%;
 }
@@ -309,7 +313,10 @@ body {
 .slaider-menu__button {
   width: 110px;
   height: 50px;
-  border: 1px solid black;
+  border: none;
+  z-index: 2;
+  -webkit-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
 }
 
 .slaider-menu__button span:nth-child(2) {
@@ -328,18 +335,57 @@ body {
   letter-spacing: 0em;
   text-align: center;
   background-color: #FFFFFF;
+  font-size: 36px;
 }
 
 .slaider-menu__button .active {
+  font-family: "RobotoBold";
   background-color: #007E82;
+  -webkit-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
 }
 
 .slaider-menu__button .active span:nth-child(2) {
   display: block;
+  font-size: 18px;
 }
 
 .slaider-menu__button .active span:nth-child(1) {
   display: none;
+}
+
+#overlay {
+  z-index: 4;
+  background-color: #010;
+  position: fixed;
+  opacity: 0.86;
+  width: 100%;
+  height: 100%;
+  display: none;
+  top: 0;
+  left: 0;
+  z-index: 11;
+}
+
+#popUp {
+  top: 0;
+  left: 10%;
+  -webkit-transform: translateY(-55%);
+          transform: translateY(-55%);
+  height: 80vh;
+  position: fixed;
+  width: 80vw;
+  border-radius: 11px;
+  background: #fef;
+  display: none;
+  opacity: 0;
+  padding: 17px;
+  z-index: 12;
+}
+
+#popUp img {
+  height: 100%;
+  width: 100%;
 }
 
 .block__text-two {
@@ -905,6 +951,27 @@ body {
 
 .clip_office {
   left: 0;
+}
+
+#popup-ring {
+  top: 0;
+  left: 10%;
+  -webkit-transform: translateY(-55%);
+          transform: translateY(-55%);
+  height: 80vh;
+  position: fixed;
+  width: 80vw;
+  border-radius: 11px;
+  background: #fef;
+  display: none;
+  opacity: 0;
+  padding: 17px;
+  z-index: 12;
+}
+
+#popup-ring img {
+  height: 100%;
+  width: 100%;
 }
 
 .stages-work__block {
