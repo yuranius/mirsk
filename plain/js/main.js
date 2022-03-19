@@ -347,13 +347,14 @@ var skmir = new function() {
 
 
                 $('.prices-examples__item img').click( function(event){
+                    if($(window).width() > 1024) {
                     let item = $(this).attr('src');
                     $('#popUp').append('<img src="'+item+'">');
                     event.preventDefault();
                     $('#overlay').fadeIn(250, function(){
                             $('#popUp').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
                             $('body').css('overflow', 'hidden')
-                        });
+                        });}
                     }); /*по нажатию на крестик закрываю окно*/
                         $('#overlay, #popUp').click( function(){
                             $('#popUp')
@@ -395,6 +396,7 @@ var skmir = new function() {
                     if($(window).width() < 1024) {
                     $(button).addClass('max-width');
                     console.log('max-width < 1024px');
+
                     }
                 });
 

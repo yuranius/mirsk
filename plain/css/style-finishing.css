@@ -62,8 +62,9 @@
   .topblock .container, .menublock .container {
     max-width: 890px;
     margin: 0px auto;
-
   }
+
+
 
   /*-------- Header ---------*/
   header .topblock {
@@ -72,6 +73,7 @@
     box-shadow: 0 1px 6px rgba(0,0,0,0.4);
     position: relative;
     z-index: 2;
+    max-width: 100%;
   }
 
   .row-contacts__item{
@@ -80,9 +82,6 @@
     margin-left: 170px;
     justify-content: space-around;
     font-size: 10px;
-    width: 100%;
-
-
   }
 
 
@@ -93,6 +92,7 @@
 
   .row-contacts{
     position: relative;
+
   }
 
 
@@ -162,11 +162,15 @@
     background: #475b5f;
   }
 
+  .row-menu{
+    min-height: 100%;
+  }
 
   .mainMenu {
-    margin-left: 170px;
+    padding-left: 170px;
     font-size: 10px;
-    width: 100%;
+    /* width: 100%; */
+
     height: 80px;
     justify-content: space-between;
     display: flex;
@@ -296,15 +300,20 @@
   /*-------------- Adaptiv ---------------*/
 
   @media (max-width: 1024px) {
-    body{
-        min-width: 560px;
+    .topblock .container, .menublock .container {
+      max-width: 890px;
+      margin: 0px auto;
     }
 
-    .menu-container, .topblock-container{
-        max-width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
+    .mainMenu > li > .subMenu > ul {
+      display: table;
+      max-width: 100px;
+
     }
+    .mainMenu > li > .subMenu > ul > li {
+      width: 100px;
+    }
+
 
   }
 
