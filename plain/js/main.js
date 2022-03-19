@@ -277,7 +277,7 @@ var skmir = new function() {
                 dots:false,
                 speed:500,
                 easing:'ease',
-                autoplay:true,
+                autoplay:false,
                 autoplaySpeed: 2000,
                 waitForAnimate:false,
                 slidesToShow:1,
@@ -332,6 +332,34 @@ var skmir = new function() {
                 ]
             });
 
+            if($(window).width() < 1024) {
+                $('.stages-work__slider').slick({
+
+                    arrows:true,
+                    dots:false,
+                    speed:1000,
+                    easing:'ease',
+                    autoplay:false,
+                    autoplaySpeed: 1000,
+                    waitForAnimate:false,
+                    slidesToShow:5,
+
+                    // vertical:true,
+                    // verticalSwiping:true,
+                    // fade:true,
+
+                    responsive:[
+                        {
+                            breakpoint: 768,
+                            settings:{
+                                dots:false,
+                                arrows:false,
+                            }
+                        }
+                    ]
+                });
+            }
+
 
 
 
@@ -367,26 +395,6 @@ var skmir = new function() {
                             });
                     });
 
-
-                    // $('.block-form__button button').click( function(event){
-
-                    //     event.preventDefault();
-                    //     $('#overlay').fadeIn(250, function(){
-                    //             $('#popup-ring').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
-
-                    //         });
-                    //     }); /*по нажатию на крестик закрываю окно*/
-                    //         $('#overlay, #popup-ring').click( function(){
-                    //             $('#popup-ring')
-                    //             .animate({opacity: 0, top: '35%'}, 490,
-                    //             function(){
-                    //                 $(this).css('display', 'none');
-
-                    //                 $('#overlay').fadeOut(220);
-
-
-                    //             });
-                    //     });
 
 
 
