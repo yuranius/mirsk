@@ -272,6 +272,10 @@ var skmir = new function() {
 
 
         jQuery(document).ready(function($){
+            $('.header__burger').click(function(e){
+                $('body, .header__burger,.header__menu').toggleClass('active')
+            })
+
             $('.prices-examples__slaider').slick({
                 arrows:true,
                 dots:false,
@@ -332,31 +336,21 @@ var skmir = new function() {
                 ]
             });
 
-            if($(window).width() < 1024) {
+            if($(window).width() <= 1024) {
                 $('.stages-work__slider').slick({
-
-                    arrows:true,
+                    arrows:false,
                     dots:false,
                     speed:1000,
                     easing:'ease',
-                    autoplay:false,
+                    autoplay:true,
                     autoplaySpeed: 1000,
                     waitForAnimate:false,
-                    slidesToShow:5,
+                    slidesToShow:6,
+                    infinite: true,
 
-                    // vertical:true,
-                    // verticalSwiping:true,
-                    // fade:true,
 
-                    responsive:[
-                        {
-                            breakpoint: 768,
-                            settings:{
-                                dots:false,
-                                arrows:false,
-                            }
-                        }
-                    ]
+
+
                 });
             }
 
