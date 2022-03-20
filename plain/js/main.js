@@ -273,7 +273,7 @@ var skmir = new function() {
 
         jQuery(document).ready(function($){
             $('.header__burger').click(function(e){
-                $('body, .header__burger,.header__menu').toggleClass('active')
+                $('html, .header__burger,.header__menu').toggleClass('active')
             })
 
             $('.prices-examples__slaider').slick({
