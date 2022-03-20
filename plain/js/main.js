@@ -346,8 +346,17 @@ var skmir = new function() {
                     autoplaySpeed: 1000,
                     waitForAnimate:false,
                     slidesToShow:6,
-                    infinite: true,
-
+                    infinite: true, //карусель
+                    responsive:[
+                        {
+                            breakpoint: 768,
+                            settings:{
+                                slidesToShow: 3,
+                                autoplay:false,
+                                slidesToScroll: 1,
+                            }
+                        }
+                    ]
 
 
 
