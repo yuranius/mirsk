@@ -604,8 +604,8 @@ html.active {
   display: grid;
   -ms-grid-rows: auto auto auto;
       grid-template-rows: auto auto auto;
-  -ms-grid-columns: auto 1fr;
-      grid-template-columns: auto 1fr;
+  -ms-grid-columns: auto 43%;
+      grid-template-columns: auto 43%;
       grid-template-areas: "header notepad" "slaider-menu notepad" "slaider notepad";
 }
 
@@ -687,7 +687,7 @@ html.active {
 }
 
 .prices-examples__price-list {
-  width: 330px;
+  width: 450px;
   height: 70px;
   background-color: #F4A251;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -712,6 +712,7 @@ html.active {
 .prices-examples__price-list span:nth-child(2) {
   text-transform: uppercase;
   font-size: 18px;
+  line-height: 18px;
 }
 
 .prices-examples__slaider-menu {
@@ -895,6 +896,8 @@ html.active {
 
 @media (max-width: 1024px) {
   .prices-examples__block {
+    -ms-grid-columns: auto 1fr;
+        grid-template-columns: auto 1fr;
         grid-template-areas: "header" "notepad" "slaider-menu" "slaider";
   }
   .prices-examples__header {
@@ -2765,52 +2768,7 @@ html.active {
   }
 }
 
-@media (max-width: 320px) {
-  .cover {
-    min-height: 1750px;
-  }
-  .description__text {
-    font-size: 14px !important;
-  }
-  .block-text__board {
-    display: none;
-  }
-  .cover-text {
-    margin: 10px 5px 10px 5px;
-    font-family: "RobotoNormal";
-    font-weight: 400;
-  }
-  .cover-list__block-image {
-    display: none;
-  }
-  .cover-list__block-menu {
-    min-height: calc(750px + (450 - 750) * ((100vw - 320px) / (510 - 320)));
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .feedback__form {
-    content: '';
-    width: 100%;
-    position: relative;
-    top: 0px !important;
-    left: 5px;
-  }
-  .cover-text_botton {
-    display: none;
-  }
-  .item__block-namber {
-    background-color: transparent;
-    border: none;
-  }
-  .block-menu__list {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-  }
-  .cover-arrow {
-    display: none;
-  }
+@media (max-width: 620px) {
   .prices-examples .slick-list {
     overflow: visible;
   }
@@ -2829,7 +2787,7 @@ html.active {
     margin-top: 20px;
   }
   .prices-examples__item {
-    height: 200px;
+    height: calc(200px + (400 - 200) * ((100vw - 320px) / (620 - 320)));
     position: relative;
   }
   .prices-examples__item img {
@@ -3084,7 +3042,7 @@ html.active {
   }
   .board__image {
     margin-top: 10px;
-    max-height: 193px;
+    max-height: calc(200px + (500 - 200) * ((100vw - 320px) / (620 - 320)));
     min-width: 100%;
     margin-left: 0px;
   }
@@ -3160,13 +3118,16 @@ html.active {
     margin: 10px 10px !important;
   }
   .example-project__principal {
-    max-height: 250px;
+    max-height: 450px;
   }
   .example-project__board {
     height: 550px !important;
   }
   .example-project .board__bodytext {
     margin-top: 20px;
+  }
+  .example-project .board__text_example-project {
+    height: 200px;
   }
   .why-my__block {
     margin-top: 40px;
@@ -3276,5 +3237,53 @@ html.active {
   }
   .notepad__image_office {
     left: 50%;
+  }
+}
+
+@media (max-width: 320px) {
+  .cover {
+    min-height: 1750px;
+  }
+  .description__text {
+    font-size: 14px !important;
+  }
+  .block-text__board {
+    display: none;
+  }
+  .cover-text {
+    margin: 10px 5px 10px 5px;
+    font-family: "RobotoNormal";
+    font-weight: 400;
+  }
+  .cover-list__block-image {
+    display: none;
+  }
+  .cover-list__block-menu {
+    min-height: calc(750px + (450 - 750) * ((100vw - 320px) / (510 - 320)));
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .feedback__form {
+    content: '';
+    width: 100%;
+    position: relative;
+    top: 0px !important;
+    left: 5px;
+  }
+  .cover-text_botton {
+    display: none;
+  }
+  .item__block-namber {
+    background-color: transparent;
+    border: none;
+  }
+  .block-menu__list {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  .cover-arrow {
+    display: none;
   }
 }
