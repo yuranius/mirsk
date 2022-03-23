@@ -17,7 +17,7 @@
   font-family: "RobotoMedium";
   font-style: normal;
   font-weight: 500;
-  src: local("Roboto Medium"), url("../fonts/RobotoMedium.woff2") format("woff2"), url("../fonts/RobotoMedium.woff") format("woff");
+  src: local("Roboto Medium"), url("../fonts/RobotoMedium.woff") format("woff");
 }
 
 @font-face {
@@ -29,6 +29,7 @@
 
 body {
   font-family: "RobotoRegular";
+  overflow-x: hidden;
 }
 
 html.active {
@@ -384,7 +385,7 @@ html.active {
   text-align: center;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1600px) {
   .cover-list__block-menu {
     min-height: 480px;
   }
@@ -442,7 +443,7 @@ html.active {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 970px) {
   html, body {
     overflow-x: hidden;
     max-width: 100% !important;
@@ -452,7 +453,7 @@ html.active {
     max-width: 768px !important;
   }
   .content {
-    max-width: 768px !important;
+    max-width: 100% !important;
   }
   .conteiner {
     max-width: 100% !important;
@@ -751,6 +752,7 @@ html.active {
   text-align: center;
   background-color: #FFFFFF;
   font-size: 36px;
+  cursor: pointer;
 }
 
 .slaider-menu__button .active {
@@ -1702,6 +1704,7 @@ html.active {
     margin-left: 100px;
     height: 310px;
     max-width: 440px;
+    margin-bottom: 40px;
   }
   .board__telephone {
     content: '';
@@ -3047,7 +3050,7 @@ html.active {
     margin-left: 0px;
   }
   .board__telephone {
-    top: 80%;
+    top: 78%;
     left: 35px;
   }
   .board__telephone h2 {
@@ -3217,11 +3220,11 @@ html.active {
     display: block;
     position: absolute;
     top: 100%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    -webkit-transform: translateY(-80%);
+            transform: translateY(-80%);
     left: 0;
     width: 20px;
-    height: 80px;
+    height: 70px;
   }
   .notepad__image img {
     width: 100%;
