@@ -336,24 +336,26 @@ var skmir = new function() {
                 ]
             });
 
-            if($(window).width() <= 1024) {
+            if($(window).width() <= 1070) {
                 $('.stages-work__slider').slick({
-                    arrows:false,
+                    arrows:true,
                     dots:false,
                     speed:1000,
                     easing:'ease',
-                    autoplay:true,
+                    autoplay:false,
                     autoplaySpeed: 1000,
                     waitForAnimate:false,
                     slidesToShow:6,
+                    slidesToScroll:1,
                     infinite: true, //карусель
                     responsive:[
                         {
                             breakpoint: 768,
                             settings:{
+                                arrows:false,
                                 slidesToShow: 3,
                                 autoplay:false,
-                                slidesToScroll: 1,
+                                slidesToScroll: 2,
                             }
                         }
                     ]
@@ -400,16 +402,6 @@ var skmir = new function() {
 
 
 
-
-                      //* mediascrin < 1024
-                $(function(){
-                    const button = document.querySelector('.board__button');
-                    if($(window).width() < 1024) {
-                    $(button).addClass('max-width');
-                    console.log('max-width < 1024px');
-
-                    }
-                });
 
                 $(document).ready(function(){
                     $("#yak").on("click", function (event) {

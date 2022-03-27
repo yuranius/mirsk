@@ -182,12 +182,12 @@ html.active {
   padding-right: 20px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1500px) {
   html, body {
     overflow-x: hidden;
   }
   .conteiner {
-    max-width: 1024px;
+    max-width: 100%;
     padding-left: 0px;
     padding-right: 0px;
     width: 100%;
@@ -385,7 +385,7 @@ html.active {
   text-align: center;
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1500px) {
   .cover-list__block-menu {
     min-height: 480px;
   }
@@ -896,7 +896,7 @@ html.active {
           box-sizing: border-box;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1500px) {
   .prices-examples__block {
     -ms-grid-columns: auto 1fr;
         grid-template-columns: auto 1fr;
@@ -1174,7 +1174,7 @@ html.active {
           box-sizing: border-box;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1500px) {
   .flip-chart__board {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1413,7 +1413,7 @@ html.active {
   background-color: #F4A251;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1500px) {
   .find-price__block {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1671,7 +1671,7 @@ html.active {
   display: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1500px) {
   .office__block {
     margin-top: 80px;
     -webkit-box-orient: vertical;
@@ -1693,10 +1693,10 @@ html.active {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 30px !important;
+    margin-top: 70px !important;
   }
   .board__paragraf {
-    max-width: 350px;
+    max-width: calc(350px + (700 - 350) * ((100vw - 768px) / (1500 - 768)));
     font-size: 18px;
   }
   .board__image {
@@ -1725,9 +1725,27 @@ html.active {
   }
 }
 
+@media (max-width: 1200px) {
+  .board__paragraf {
+    max-width: calc(350px + (700 - 350) * ((100vw - 768px) / (1500 - 768)));
+    font-size: 18px;
+  }
+  .board__image {
+    height: calc(276px + (310 - 276) * ((100vw - 768px) / (1200 - 768)));
+    max-width: calc(320px + (440 - 320) * ((100vw - 768px) / (1200 - 768)));
+    margin: 0px auto 40px auto;
+  }
+}
+
 @media (max-width: 768px) {
   .feedback__block {
     min-width: 768px;
+  }
+  .board__text_office {
+    margin-top: 30px !important;
+  }
+  .board__paragraf {
+    max-width: 350px;
   }
   .board__image {
     margin-left: 40px;
@@ -1791,6 +1809,13 @@ html.active {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 80%;
           flex: 0 1 80%;
+  position: relative;
+  padding: 0px 0px;
+  min-width: 0;
+}
+
+.stages-work__slider button {
+  border: none;
 }
 
 .rectangle {
@@ -1807,6 +1832,53 @@ html.active {
   max-width: 120px;
 }
 
+.stages-work__slider .slick-arrow {
+  position: absolute;
+  top: 80%;
+  margin-top: -20px;
+  z-index: 10;
+  font-size: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.stages-work__slider .slick-arrow::after {
+  display: none;
+}
+
+.stages-work__slider .slick-arrow.slick-prev {
+  left: 10px;
+  background: url("/img/finished/2-prices-and-examples/left-arrow.svg") 0 0/100% no-repeat;
+}
+
+.stages-work__slider .slick-arrow.slick-next {
+  right: 10px;
+  background: url("/img/finished/2-prices-and-examples/right-arrow.svg") 0 0/100% no-repeat;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+/* Слайдер */
+/* Слайдер запущен */
+/* Слайдер с точками */
+/* Ограничивающая оболочка */
+.stages-work__slider .slick-list {
+  overflow: hidden;
+}
+
+/* Лента слайдов */
+.stages-work__slider .slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* Слайд */
+/* Слайд активный (показывается) */
+/* Слайд основной */
+/* Слайд по центру */
+/* Клонированный слайд */
+/* Стрелка не активная */
 .slider__element {
   min-height: 790px;
   background-color: #404A54;
@@ -1923,7 +1995,7 @@ html.active {
   top: 94.5%;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1500px) {
   .stages-work__block {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2127,7 +2199,7 @@ html.active {
   height: 100%;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1500px) {
   .project-work__block {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2333,7 +2405,7 @@ html.active {
   right: 0;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1500px) {
   .example-project__block {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -2459,7 +2531,7 @@ html.active {
   margin-left: 45px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1500px) {
   .why-my__block {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2517,7 +2589,7 @@ html.active {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 974px) {
   .why-my__positive {
     margin-top: 20px;
   }
