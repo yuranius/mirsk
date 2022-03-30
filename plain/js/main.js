@@ -410,6 +410,12 @@ var skmir = new function() {
                             top = $('#yak-id').offset().top;
                         $('body,html').animate({scrollTop: top}, 1000);
                     });
+                    $(".element__button_yak").on("click", function (event) {
+                        event.preventDefault();
+                        let id  = $(this).attr('href'),
+                            top = $('#yak1-id').offset().top;
+                        $('body,html').animate({scrollTop: top}, 500);
+                    });
                 });
 
                 });
