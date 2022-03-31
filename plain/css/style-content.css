@@ -242,7 +242,6 @@ html.active {
 .block-text__description p {
   margin-left: 75px;
   margin-top: 42px;
-  color: #404A54;
 }
 
 .description__title {
@@ -268,9 +267,11 @@ html.active {
   line-height: 35px;
   letter-spacing: 0em;
   text-align: left;
+  color: #404A54;
 }
 
 .description__text {
+  font-family: 'RobotoRegular';
   font-size: 21px;
   line-height: 23px;
   letter-spacing: 0em;
@@ -503,14 +504,13 @@ html.active {
     margin-top: 0px;
   }
   .cover-text {
-    font-family: "RobotoMedium";
+    font-family: 'RobotoRegular';
     font-size: calc(18px + (21 - 18) * ((100vw - 510px) / (768 - 510)));
-    font-style: normal;
-    font-weight: 600;
-    line-height: 26px;
+    line-height: 23px;
+    text-align: left;
     text-transform: none;
     max-width: 100%;
-    margin: 10px 5px 10px 35px;
+    margin: 10px 5px 10px 45px;
   }
   .cover-text_botton {
     margin: 10px 0px 10px 5px;
@@ -544,7 +544,7 @@ html.active {
     line-height: 24px;
     content: '';
     position: absolute;
-    top: 10px;
+    top: 0px;
     left: 300px;
     max-width: 370px;
   }
@@ -692,6 +692,15 @@ html.active {
 
 .prices-examples__slaider button {
   border: none;
+}
+
+.prices-examples__subitem {
+  height: 530px;
+}
+
+.prices-examples__subitem img {
+  width: 100%;
+  height: 100%;
 }
 
 .prices-examples__item {
@@ -1208,9 +1217,12 @@ html.active {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .flip-chart__title {
     font-size: 40px;
@@ -1221,7 +1233,7 @@ html.active {
   }
   .flip-chart__subtitle {
     margin-top: 0px;
-    margin-left: 60px;
+    margin-right: 30px;
   }
   .flip-chart__subtitle span {
     display: none;
@@ -1959,8 +1971,9 @@ html.active {
   height: 70px;
 }
 
-.element__image img{
-  width: 100%;height: 100%;
+.element__image img {
+  width: 100%;
+  height: 100%;
 }
 
 .element__button {
@@ -2504,8 +2517,8 @@ html.active {
 .board__slogan {
   content: '';
   position: absolute;
-  top: 73%;
-  left: 50%;
+  top: 90%;
+  left: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2694,9 +2707,6 @@ html.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2706,6 +2716,7 @@ html.active {
   line-height: 110%;
   text-transform: uppercase;
   color: #FFFFFF;
+  padding-left: 60px;
 }
 
 .answer-questyion > div:last-child {
@@ -2784,9 +2795,11 @@ html.active {
     display: none;
   }
   .cover-text {
-    margin: 10px 5px 10px 5px;
-    font-family: "RobotoNormal";
+    margin: 10px 5px 10px 15px;
+    font-family: "RobotoRegular";
     font-weight: 400;
+    font-style: normal;
+    font-size: calc(14px + (21 - 14) * ((100vw - 320px) / (510 - 320)));
   }
   .cover-list__block-image {
     display: none;
@@ -2821,7 +2834,6 @@ html.active {
   }
   .prices-examples__title {
     font-size: 28px;
-    text-transform: capitalize;
   }
   .prices-examples__title_two {
     display: none;
@@ -2898,14 +2910,11 @@ html.active {
     height: 40px;
     background-color: transparent;
   }
-  .prices-examples__slaider-menu {
-    display: none;
-  }
-  .prices-examples__slaider {
-    margin-top: 20px;
+  .prices-examples__subitem {
+    max-height: 75vw !important;
   }
   .prices-examples__item {
-    height: calc(200px + (400 - 200) * ((100vw - 320px) / (620 - 320)));
+    height: calc(220px + (430 - 220) * ((100vw - 320px) / (620 - 320)));
     position: relative;
   }
   .prices-examples__item img {
@@ -2915,7 +2924,7 @@ html.active {
   .prices-examples__price-list {
     width: 207px;
     height: 40px;
-    top: 90%;
+    top: 70vw;
     left: 5px;
     z-index: 50;
   }
@@ -2927,6 +2936,9 @@ html.active {
     text-transform: unset;
     font-size: 14px;
   }
+  .prices-examples .slaider-menu__button {
+    width: 20%;
+  }
   .notepad__page .notepad__image {
     display: none;
   }
@@ -2934,10 +2946,10 @@ html.active {
     font-size: 'RobotoMedium';
     max-width: 240px;
     margin-top: 0px;
-    margin-left: 10px;
+    margin-left: 15px;
     line-height: 20px;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 21px;
     text-transform: none;
     color: #404A54;
   }
@@ -2965,15 +2977,10 @@ html.active {
   .flip-chart__title {
     font-style: 'RobotoMedium';
     font-weight: 600;
-    font-size: 18px;
-    line-height: 20px;
-    text-transform: initial;
+    font-size: 21px;
+    line-height: 24px;
     color: #FFFFFF;
     min-width: 150px;
-  }
-  .flip-chart__title_two {
-    font-size: 18px;
-    margin-top: -5px;
   }
   .flip-chart__subtitle {
     font-family: "RobotoRegular" !important;
@@ -2981,7 +2988,6 @@ html.active {
     font-size: 14px;
     line-height: 15px;
     text-transform: lowercase;
-    margin-top: 20px;
     max-width: 144px;
     margin-left: 0px;
   }
@@ -2990,8 +2996,8 @@ html.active {
     padding-right: 50px;
   }
   .flip-chart__subtitle p {
-    font-family: "RobotoRegular" !important;
-    font-weight: 400;
+    font-family: "RobotoBold" !important;
+    font-weight: 600;
   }
   .flip-chart__list {
     margin-bottom: 30px;
@@ -3358,6 +3364,15 @@ html.active {
   }
 }
 
+@media (max-width: 370px) {
+  .flip-chart__text {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 @media (max-width: 320px) {
   .description__text {
     font-size: 14px !important;
@@ -3366,7 +3381,6 @@ html.active {
     display: none;
   }
   .cover-text {
-    margin: 10px 5px 10px 5px;
     font-family: "RobotoNormal";
     font-weight: 400;
   }

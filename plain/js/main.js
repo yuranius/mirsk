@@ -285,6 +285,8 @@ var skmir = new function() {
                 autoplaySpeed: 2000,
                 waitForAnimate:false,
                 slidesToShow:1,
+                swipe:false,
+                infinite: false,
                 // vertical:true,
                 // verticalSwiping:true,
                 // fade:true,
@@ -311,7 +313,7 @@ var skmir = new function() {
 
             $('.prices-examples__subslaider').slick({
                 arrows:true,
-                dots:true,
+                dots:false,
                 speed:500,
                 easing:'ease',
                 autoplay:false,
@@ -381,6 +383,8 @@ var skmir = new function() {
                         });
             });
 
+
+
             if($(window).width() <= 1070) {
                 $('.stages-work__slider').slick({
                     arrows:true,
@@ -420,30 +424,59 @@ var skmir = new function() {
                     e.preventDefault();
                     var slideno = $(this).data('slide');
                     $('.prices-examples__slaider').slick('slickGoTo', slideno - 1);
-
                 });
 
 
-                $('.prices-examples__item img').click( function(event){
-                    if($(window).width() > 1024) {
-                    let item = $(this).attr('src');
-                    $('#popUp').append('<img src="'+item+'">');
-                    event.preventDefault();
-                    $('#overlay').fadeIn(250, function(){
-                            $('#popUp').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
-                            $('body').css('overflow', 'hidden')
-                        });}
-                    }); /*по нажатию на крестик закрываю окно*/
-                        $('#overlay, #popUp').click( function(){
-                            $('#popUp')
-                            .animate({opacity: 0, top: '35%'}, 490,
-                            function(){
-                                $(this).css('display', 'none');
-                                $('#overlay').fadeOut(220);
-                                $('body').css('overflow', 'auto')
-                                $('#popUp img').remove();
-                            });
-                    });
+                // $('.prices-examples__item img').click( function(event){
+                //     if($(window).width() > 1024) {
+                //     let item = $(this).attr('src');
+                //     $('#popUp').append('<img src="'+item+'">');
+                //     event.preventDefault();
+                //     $('#overlay').fadeIn(250, function(){
+                //             $('#popUp').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
+                //             $('body').css('overflow', 'hidden')
+                //         });}
+                //     }); /*по нажатию на крестик закрываю окно*/
+                //         $('#overlay, #popUp').click( function(){
+                //             $('#popUp')
+                //             .animate({opacity: 0, top: '35%'}, 490,
+                //             function(){
+                //                 $(this).css('display', 'none');
+                //                 $('#overlay').fadeOut(220);
+                //                 $('body').css('overflow', 'auto')
+                //                 $('#popUp img').remove();
+                //             });
+                //     });
+
+
+
+                    $('.prices-examples__item').click( function(event){
+                        const subitem = document.querySelector('.prices-examples__item');
+
+                        if($(window).width() < 13024) {
+                        let item = $(this).attr('data-slick-index');
+
+
+                        console.log(subitem);
+
+                        $('#popUp').append(subitem);
+
+                        // event.preventDefault();
+                        $('#overlay').fadeIn(250, function(){
+                                $('#popUp').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
+                                $('body').css('overflow', 'hidden')
+                            });}
+                        }); /*по нажатию на крестик закрываю окно*/
+                            $('#overlay, #popUp').click( function(){
+                                $('#popUp')
+                                .animate({opacity: 0, top: '35%'}, 490,
+                                function(){
+                                    // $(this).css('display', 'none');
+                                    // $('#overlay').fadeOut(220);
+                                    // $('body').css('overflow', 'auto')
+                                    // $('#popUp img').remove();
+                                });
+                        });
 
 
 
