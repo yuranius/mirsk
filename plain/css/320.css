@@ -1,0 +1,45 @@
+@media (max-width: 370px) {
+  .flip-chart__text {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 320px) {
+  .description__text {
+    font-size: 14px !important;
+  }
+  .block-text__board {
+    display: none;
+  }
+  .cover-text {
+    font-family: "RobotoNormal";
+    font-weight: 400;
+  }
+  .cover-list__block-image {
+    display: none;
+  }
+  .cover-list__block-menu {
+    min-height: calc(750px + (450 - 750) * ((100vw - 320px) / (510 - 320)));
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .cover-text_botton {
+    display: none;
+  }
+  .item__block-namber {
+    background-color: transparent;
+    border: none;
+  }
+  .block-menu__list {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  .cover-arrow {
+    display: none;
+  }
+}
