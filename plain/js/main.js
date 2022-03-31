@@ -277,7 +277,7 @@ var skmir = new function() {
             })
 
             $('.prices-examples__slaider').slick({
-                arrows:true,
+                arrows:false,
                 dots:false,
                 speed:500,
                 easing:'ease',
@@ -309,6 +309,30 @@ var skmir = new function() {
                 }
             });
 
+            $('.prices-examples__subslaider').slick({
+                arrows:true,
+                dots:true,
+                speed:500,
+                easing:'ease',
+                autoplay:false,
+                autoplaySpeed: 2000,
+                waitForAnimate:false,
+                slidesToShow:1,
+                // vertical:true,
+                // verticalSwiping:true,
+                // fade:true,
+
+                responsive:[
+                    {
+                        breakpoint: 768,
+                        settings:{
+                            dots:false,
+                            arrows:false,
+                        }
+                    }
+                ]
+            });
+
 
             $('.example-project__slaider').slick({
 
@@ -334,6 +358,27 @@ var skmir = new function() {
                         }
                     }
                 ]
+            });
+
+            $('.example-project__slaider img').click( function(event){
+                if($(window).width() > 1024) {
+                let item = $(this).attr('src');
+                $('#popUp').append('<img src="'+item+'">');
+                event.preventDefault();
+                $('#overlay').fadeIn(250, function(){
+                        $('#popUp').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
+                        $('body').css('overflow', 'hidden')
+                    });}
+                }); /*по нажатию на крестик закрываю окно*/
+                    $('#overlay, #popUp').click( function(){
+                        $('#popUp')
+                        .animate({opacity: 0, top: '35%'}, 490,
+                        function(){
+                            $(this).css('display', 'none');
+                            $('#overlay').fadeOut(220);
+                            $('body').css('overflow', 'auto')
+                            $('#popUp img').remove();
+                        });
             });
 
             if($(window).width() <= 1070) {
@@ -415,6 +460,12 @@ var skmir = new function() {
                         let id  = $(this).attr('href'),
                             top = $('#yak1-id').offset().top;
                         $('body,html').animate({scrollTop: top}, 500);
+                    });
+                    $(".flip-chart__description > a").on("click", function (event) {
+                        event.preventDefault();
+                        let id  = $(this).attr('href'),
+                            top = $('#yak2-id').offset().top;
+                        $('body,html').animate({scrollTop: top}, 1000);
                     });
                 });
 

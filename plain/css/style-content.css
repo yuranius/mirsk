@@ -808,7 +808,7 @@ html.active {
           transform: translateY(-55%);
   height: 80vh;
   position: fixed;
-  width: 80vw;
+  width: 113.2vh;
   border-radius: 11px;
   background: #fef;
   display: none;
@@ -1955,6 +1955,12 @@ html.active {
 
 .element__image {
   margin-top: 60px;
+  width: 70px;
+  height: 70px;
+}
+
+.element__image img{
+  width: 100%;height: 100%;
 }
 
 .element__button {
