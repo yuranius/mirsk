@@ -1,10 +1,12 @@
 @media (max-width: 620px) {
   .cover {
-    min-height: calc(1900px + (1550 - 1900) * ((100vw - 220px) / (510 - 220)));
+    min-height: calc(1900px + -350 * (100vw - 220px) / 290);
   }
+
   .prices-examples .slick-list {
     overflow: visible;
   }
+
   .prices-examples {
     min-height: 543px;
   }
@@ -17,7 +19,7 @@
     max-height: 75vw !important;
   }
   .prices-examples__item {
-    height: calc(220px + (430 - 200) * ((100vw - 320px) / (620 - 320)));
+    height: calc(220px + 210 * (100vw - 320px) / 300);
     position: relative;
   }
   .prices-examples__item img {
@@ -42,11 +44,13 @@
   .prices-examples .slaider-menu__button {
     width: 20%;
   }
+
   .notepad__page .notepad__image {
     display: none;
   }
+
   .notepad__title {
-    font-size: 'RobotoMedium';
+    font-size: "RobotoMedium";
     max-width: 240px;
     margin-top: 0px;
     margin-left: 15px;
@@ -59,9 +63,11 @@
   .notepad__block-image {
     display: none;
   }
+
   .hanger {
     display: none;
   }
+
   .flip-chart__clip {
     display: none;
   }
@@ -78,7 +84,7 @@
     margin-left: 10px;
   }
   .flip-chart__title {
-    font-style: 'RobotoMedium';
+    font-style: "RobotoMedium";
     font-weight: 600;
     font-size: 21px;
     line-height: 24px;
@@ -135,6 +141,7 @@
     margin-left: 10px;
     margin-bottom: 20px;
   }
+
   .find-price__block {
     min-height: 370px;
     margin-top: 40px;
@@ -142,6 +149,7 @@
   .find-price__rectangle {
     display: none;
   }
+
   .board__text {
     color: #FFFFFF;
     margin-top: 20px;
@@ -186,7 +194,7 @@
     margin-bottom: 0px;
   }
   .board__button button {
-    font-family: 'RobotoMedium';
+    font-family: "RobotoMedium";
     font-size: 18px;
     line-height: 20px;
     text-align: center;
@@ -194,9 +202,11 @@
     width: 100%;
     height: 100%;
   }
+
   .office__block {
     margin-top: 40px;
   }
+
   .feedback__title {
     display: none;
   }
@@ -221,6 +231,7 @@
             flex: 1 1 50%;
     margin-bottom: 20px;
   }
+
   .block-form__image {
     min-height: 200px;
     display: -webkit-box;
@@ -254,6 +265,7 @@
         -ms-flex-order: 3;
             order: 3;
   }
+
   .board__paragraf {
     font-size: 14px;
     line-height: 15px;
@@ -269,7 +281,7 @@
   }
   .board__image {
     margin-top: 10px;
-    max-height: calc(200px + (500 - 200) * ((100vw - 320px) / (620 - 320)));
+    max-height: calc(200px + 300 * (100vw - 320px) / 300);
     min-width: 100%;
     margin-left: 0px;
   }
@@ -280,13 +292,16 @@
   .board__telephone h2 {
     font-size: 28px !important;
   }
+
   .telephone__image img {
     width: 30px;
     height: 30px;
   }
+
   .rectangle {
     display: none;
   }
+
   .stages-work__block {
     min-height: 600px;
   }
@@ -297,6 +312,7 @@
   .stages-work__clip {
     display: none;
   }
+
   .board__text_stages-work {
     margin-bottom: 0px;
     margin-top: 0px !important;
@@ -313,12 +329,14 @@
     left: 50%;
     max-width: 150px;
   }
+
   .slider__element {
     min-height: 567px;
   }
   .slider__element h5 {
     height: 250px;
   }
+
   .element__image {
     margin-top: 30px;
   }
@@ -328,12 +346,14 @@
   .element__button {
     top: 490px;
   }
+
   .project-work__block {
     margin-top: 40px;
   }
   .project-work__board {
     min-height: 50px;
   }
+
   .example-project__block {
     min-height: 500px;
     display: -webkit-box;
@@ -356,12 +376,14 @@
   .example-project .board__text_example-project {
     height: 200px;
   }
+
   .why-my__block {
     margin-top: 40px;
   }
   .why-my__board {
     min-height: 230px;
   }
+
   .board__slogan {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -373,6 +395,7 @@
         -ms-flex-align: center;
             align-items: center;
   }
+
   .slogan__logo img {
     width: 30px;
     height: 30px;
@@ -382,18 +405,17 @@
     margin-left: 18px;
     max-width: 150px;
   }
+
   .positive__list {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: auto;
-        grid-template-columns: auto;
-    -ms-grid-rows: auto auto auto auto auto;
-        grid-template-rows: auto auto auto auto auto;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto;
     margin-left: 10px;
     margin-right: 10px;
   }
+
   .item__header h2 {
-    font-family: 'RobotoMedium';
+    font-family: "RobotoMedium";
     font-size: 18px;
     line-height: 110%;
     text-transform: initial;
@@ -412,6 +434,7 @@
     margin-left: 0px;
     font-size: 14px;
   }
+
   .header__image img {
     width: 100%;
     height: 100%;
@@ -437,9 +460,11 @@
     margin-top: 40px;
     margin-left: 10px;
   }
+
   .answer-questyion__body {
     margin: 10px 10px 0px 10px;
   }
+
   .notepad__image {
     display: block;
     position: absolute;

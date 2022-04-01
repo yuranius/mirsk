@@ -362,26 +362,27 @@ var skmir = new function() {
                 ]
             });
 
-            $('.example-project__slaider img').click( function(event){
-                if($(window).width() > 1024) {
-                let item = $(this).attr('src');
-                $('#popUp').append('<img src="'+item+'">');
-                event.preventDefault();
-                $('#overlay').fadeIn(250, function(){
-                        $('#popUp').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
-                        $('body').css('overflow', 'hidden')
-                    });}
-                }); /*по нажатию на крестик закрываю окно*/
-                    $('#overlay, #popUp').click( function(){
-                        $('#popUp')
-                        .animate({opacity: 0, top: '35%'}, 490,
-                        function(){
-                            $(this).css('display', 'none');
-                            $('#overlay').fadeOut(220);
-                            $('body').css('overflow', 'auto')
-                            $('#popUp img').remove();
-                        });
-            });
+            //^ пока убрат т.к. пересекается
+            // $('.example-project__slaider img').click( function(event){
+            //     if($(window).width() > 1024) {
+            //     let item = $(this).attr('src');
+            //     $('#popUp').append('<img src="'+item+'">');
+            //     event.preventDefault();
+            //     $('#overlay').fadeIn(250, function(){
+            //             $('#popUp').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
+            //             $('body').css('overflow', 'hidden')
+            //         });}
+            //     }); /*по нажатию на крестик закрываю окно*/
+            //         $('#overlay, #popUp').click( function(){
+            //             $('#popUp')
+            //             .animate({opacity: 0, top: '35%'}, 490,
+            //             function(){
+            //                 $(this).css('display', 'none');
+            //                 $('#overlay').fadeOut(220);
+            //                 $('body').css('overflow', 'auto')
+            //                 $('#popUp img').remove();
+            //             });
+            // });
 
 
 
@@ -451,30 +452,31 @@ var skmir = new function() {
 
 
                     $('.prices-examples__item').click( function(event){
-                        const subitem = document.querySelector('.prices-examples__item');
-
-                        if($(window).width() < 13024) {
-                        let item = $(this).attr('data-slick-index');
 
 
-                        console.log(subitem);
+                        if ($(event.target).closest('.prices-examples__subslaider button').length) return; // елис клик по кнопкам навигации, то возвращаем функцию
 
-                        $('#popUp').append(subitem);
+                        let item = $(this).attr('data-slick-index'); // елис клик по кнопкам навигации, то возвращаем функцию
 
-                        // event.preventDefault();
+                        // клолнируем элемент вкладки-слайдера
+                        let subitemClone = this.cloneNode(true);
+                        // добавляем его в попап
+                        $('#popUp').append(subitemClone);
+
                         $('#overlay').fadeIn(250, function(){
                                 $('#popUp').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
                                 $('body').css('overflow', 'hidden')
-                            });}
-                        }); /*по нажатию на крестик закрываю окно*/
-                            $('#overlay, #popUp').click( function(){
-                                $('#popUp')
-                                .animate({opacity: 0, top: '35%'}, 490,
-                                function(){
-                                    // $(this).css('display', 'none');
-                                    // $('#overlay').fadeOut(220);
-                                    // $('body').css('overflow', 'auto')
-                                    // $('#popUp img').remove();
+                                $('.prices-examples__price-list').css('display', 'none')
+                        });
+
+                        });
+                            $('#overlay, .popup__closest').click( function(){
+                                $('#popUp').animate({opacity: 0, top: '35%'}, 490,function(){
+                                    $('.prices-examples__price-list').css('display', 'block')
+                                    $(this).css('display', 'none');
+                                    $('#overlay').fadeOut(220);
+                                    $('body').css('overflow', 'auto')
+                                    $('#popUp > div').remove(); // удаляем его из попап
                                 });
                         });
 
