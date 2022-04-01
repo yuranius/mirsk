@@ -41,7 +41,7 @@
 
 
 
-body{
+body {
 	font-family: "RobotoRegular";
 	overflow-x: hidden;
 }
@@ -1043,28 +1043,55 @@ html.active{
 	display:none;
 	top:0;
 	left:0;
-	z-index: 11;
+	z-index: 9;
 }
 
 #popUp {
 	top: 0;
-	left: 10%;
+	left: 0;
 	transform: translateY(-55%);
-	height: 80vh;
+	height: 95vh;
 	position: fixed;
-	width: 113.2vh;
-	border-radius: 11px;
+	width: 100vw;
 	background: #fef;
 	display: none;
 	opacity: 0;
-	padding: 17px;
-	z-index: 12;
+	z-index: 10;
+
 	img{
 		height: 100%;
 		width: 100%;
 	}
-}
 
+}
+.popup__closest{
+	width: 50px;
+	height: 50px;
+	background-color: #F4A251;
+	border-radius: 50%;
+	border: 1px solid #fef;
+	content: '';
+	position: absolute;
+	top: 5%;
+	left: 90%;
+	z-index: 12;
+	opacity: 0.8;
+	&::after, &::before{
+		content: '';
+		left: 4.5px;
+		top: 24px;
+		width: 80%;
+		height: 2px;
+		background-color: #fff;
+		position: absolute;
+	}
+	&::after{
+		transform: rotate(45deg);
+	}
+	&::before{
+		transform: rotate(-45deg);
+	}
+}
 
 
 
