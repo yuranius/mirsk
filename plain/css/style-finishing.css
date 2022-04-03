@@ -45,16 +45,15 @@
 
   /*------------ Reset --------------*/
   html {height: 0;}
-  * { margin: 0; outline: none; }
+  * { margin: 0;}
   body, p, ul, li, ol, pre, caption, h1, h2, h3, h4, h5, h6, form, div, fieldset, legend { padding: 0; }
   h1, h2, h3, h4, h5, h6 {  }
   [data-cbox] { outline: none; }
-  body { overflow-x:hidden; display: block; position: relative; min-height: 100%; width: 100%; min-width: 960px;
-    font: normal 1em/1 'Arial', sans-serif; background: #fff; background-size: cover; z-index: -10000; }
+  body { overflow-x:hidden; display: block; position: relative; min-height: 100%; width: 100%; min-width: 960px; background-size: cover; z-index: -10000; }
   img, fieldset { border: 0; }
   input::-moz-focus-inner, button::-moz-focus-inner { padding: 0; border: 0; }
   a { color: #007b81; text-decoration: none; }
-  a:hover { color: #000; text-decoration: none; }
+  a:hover {text-decoration: none; }
 
 
   /*-------- Conteiner ---------*/
@@ -97,7 +96,7 @@
 
 
   header .topblock .phone {
-    font-family: 'RobotoRegular';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -263,7 +262,7 @@
   .mainMenu > li > .subMenu > ul > li > a {
     display: block;
     color: #152022;
-    font: normal 1.5em 'Akrobat', sans-serif;
+    font: normal 1.5em 'Roboto', sans-serif;
     text-decoration: none;
   }
   .mainMenu > li > .subMenu > ul > li > a:hover {

@@ -9,6 +9,8 @@
 
     .description {
         &__text {
+            font-family: "Roboto";
+            font-weight: 400;
             font-size: calc(14px + (21 - 14) * ((100vw - 320px) / (510 - 320)));
         }
 
@@ -29,7 +31,7 @@
 
     .cover-text {
         margin: 10px 5px 10px 15px;
-        font-family: "RobotoRegular";
+        font-family: "Roboto";
         font-weight: 400;
         font-style: normal;
         font-size: calc(14px + (21 - 14) * ((100vw - 320px) / (510 - 320)));

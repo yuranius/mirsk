@@ -7,14 +7,23 @@
         }
         //* ------------------------------prices-examples--------------------------//
 
+        #popupExamples > .super-slider > .slick-list > .slick-track > .prices-examples__subitem{
+            width: 89vw;
+            height: 85vw;
+        }
+
+        #popupExamples {
+            height: 90vw;
+        }
+        .super-slider {
+            height: 90vw;
+        }
+
         .popup__closest{
             display: none;
         }
 
-        #popUp{
-            width: 100vw;
-            height: 80vw;
-        }
+
         // .prices-examples .slick-list{
         //     overflow:visible;
         //   }

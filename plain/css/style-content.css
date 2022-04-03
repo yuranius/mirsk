@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap");
 @font-face {
   font-family: "RobotoRegular";
   font-style: normal;
@@ -28,7 +29,8 @@
 }
 
 body {
-  font-family: "RobotoRegular";
+  font-family: "Roboto";
+  font-weight: 400;
   overflow-x: hidden;
 }
 
@@ -53,7 +55,9 @@ html.active {
 }
 
 .header__menu {
-  display: none;
+  top: -150%;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 
 @media (max-width: 768px) {
@@ -109,7 +113,6 @@ html.active {
   }
   .header__menu {
     position: fixed;
-    top: 0;
     left: 0;
     width: 100%;
     max-width: 100%;
@@ -120,7 +123,9 @@ html.active {
     z-index: 1;
   }
   .header__menu.active {
-    display: block;
+    -webkit-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+    top: 0;
   }
   .header__logo {
     width: 100px;
@@ -221,7 +226,6 @@ html.active {
   display: flex;
   min-height: 450px;
   margin: auto 0;
-  background-color: #FFFFFF;
   margin-top: 30px;
 }
 
@@ -237,6 +241,7 @@ html.active {
   min-height: 450px;
   max-width: 760px;
   position: relative;
+  background-color: #fff;
 }
 
 .block-text__description p {
@@ -271,7 +276,7 @@ html.active {
 }
 
 .description__text {
-  font-family: 'RobotoRegular';
+  font-family: 'Roboto';
   font-size: 21px;
   line-height: 23px;
   letter-spacing: 0em;
@@ -821,23 +826,34 @@ html.active {
   z-index: 9;
 }
 
-#popUp {
+#popupExamples {
   top: 0;
   left: 0;
   -webkit-transform: translateY(-55%);
           transform: translateY(-55%);
   height: 90vh;
   position: fixed;
-  width: 127.35vh;
+  width: 100vw;
   background: #fef;
   display: none;
   opacity: 0;
   z-index: 10;
 }
 
-#popUp img {
+#popupExamples img {
   height: 100%;
   width: 100%;
+}
+
+#popupExamples > .super-slider > .slick-list > .slick-track > .prices-examples__subitem {
+  margin-top: 10px;
+  width: 89vw;
+  height: 85vh;
+}
+
+#popupExamples > .super-slider > .slick-list > .slick-track > .prices-examples__subitem img {
+  width: 100%;
+  height: 100%;
 }
 
 #popUp > .prices-examples__item > .prices-examples__subslaider {
@@ -884,8 +900,83 @@ html.active {
           transform: rotate(-45deg);
 }
 
+.super-slider {
+  margin-right: 0px;
+  width: 100vw;
+  height: 90vh;
+  position: relative;
+  padding: 0px 0px;
+  min-width: 0;
+}
+
+.super-slider button {
+  border: none;
+}
+
 .block__text-two {
   display: none;
+}
+
+.super-slider .slick-arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  z-index: 10;
+  font-size: 0;
+  width: 50px;
+  height: 100px;
+}
+
+.super-slider .slick-arrow::after {
+  display: none;
+}
+
+.super-slider .slick-arrow.slick-prev {
+  left: 10px;
+  background: url("/img/finished/2-prices-and-examples/left-arrow.svg") 0 0/100% no-repeat;
+}
+
+.super-slider .slick-arrow.slick-next {
+  right: 10px;
+  background: url("/img/finished/2-prices-and-examples/right-arrow.svg") 0 0/100% no-repeat;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.super-slider .slick-dots {
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.super-slider .slick-dots li {
+  list-style: none;
+  margin: 10px 10px;
+}
+
+.super-slider .slick-dots li.slick-active button {
+  background-color: transparent;
+  border: 1px solid #404A54;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.super-slider .slick-dots li button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #404A54;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  border: 1px solid #404A54;
 }
 
 .prices-examples__slaider .slick-arrow {
@@ -2579,7 +2670,30 @@ html.active {
   right: 0;
 }
 
+#popUp {
+  top: 0;
+  left: 0;
+  -webkit-transform: translateY(-55%);
+          transform: translateY(-55%);
+  height: 90vh;
+  position: fixed;
+  width: 127.35vh;
+  background: #fef;
+  display: none;
+  opacity: 0;
+  z-index: 10;
+}
+
+#popUp img {
+  height: 100%;
+  width: 100%;
+}
+
 @media (max-width: 1500px) {
+  #popUp {
+    width: 100vw;
+    height: 70.67vw;
+  }
   .example-project__block {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -2915,6 +3029,8 @@ html.active {
 
 @media (max-width: 510px) and (min-width: 220px) {
   .description__text {
+    font-family: "Roboto";
+    font-weight: 400;
     font-size: calc(14px + (21 - 14) * ((100vw - 320px) / (510 - 320)));
   }
   .description__title {
@@ -2929,7 +3045,7 @@ html.active {
   }
   .cover-text {
     margin: 10px 5px 10px 15px;
-    font-family: "RobotoRegular";
+    font-family: "Roboto";
     font-weight: 400;
     font-style: normal;
     font-size: calc(14px + (21 - 14) * ((100vw - 320px) / (510 - 320)));
@@ -3032,12 +3148,18 @@ html.active {
   .cover {
     min-height: calc(1900px + (1550 - 1900) * ((100vw - 220px) / (510 - 220)));
   }
+  #popupExamples > .super-slider > .slick-list > .slick-track > .prices-examples__subitem {
+    width: 89vw;
+    height: 85vw;
+  }
+  #popupExamples {
+    height: 90vw;
+  }
+  .super-slider {
+    height: 90vw;
+  }
   .popup__closest {
     display: none;
-  }
-  #popUp {
-    width: 100vw;
-    height: 80vw;
   }
   .prices-examples {
     min-height: 543px;

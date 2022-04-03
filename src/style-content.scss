@@ -37,12 +37,13 @@
 		url("../fonts/EuphoriaScriptRegular.woff") format("woff");
 }
 
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap');
 
 
 
 body {
-	font-family: "RobotoRegular";
+	font-family: "Roboto";
+	font-weight: 400;
 	overflow-x: hidden;
 }
 
@@ -71,7 +72,8 @@ html.active{
 	// .header__menu
 
 	&__menu {
-		display: none;
+		top: -150%;
+		transition: all 0.5s ease 0s;
 	}
 
 	// .header__list
@@ -142,7 +144,6 @@ html.active{
 
 	&__menu { //^Работаем с меню после breakpoint
 		position: fixed;
-		top: 0;
 		left: 0;
 		width: 100%;
 		max-width: 100%;
@@ -156,7 +157,8 @@ html.active{
 	}
 
 	&__menu.active{
-		display: block;
+		transition: all 0.5s ease 0s;
+		top: 0;
 	}
 
 	&__link {
@@ -269,7 +271,6 @@ html.active{
 			display: flex;
 			min-height: 450px;
 			margin: auto 0;
-			background-color: #FFFFFF;
 			margin-top: 30px;
 		}
 
@@ -297,6 +298,7 @@ html.active{
 			min-height: 450px;
 			max-width: 760px;
 			position: relative;
+			background-color: #fff;
 			p {
 				margin-left: 75px;
 				margin-top: 42px;
@@ -343,13 +345,14 @@ html.active{
 		// .description__text
 
 		&__text {
-			font-family:'RobotoRegular';
+			font-family:'Roboto';
 			font-size: 21px;
 			line-height: 23px;
 			letter-spacing: 0em;
 			text-align: left;
 			color: #404A54;
 			margin-right: 222px;
+
 		}
 }
 .cover-text {
@@ -1051,13 +1054,13 @@ html.active{
 	z-index: 9;
 }
 
-#popUp {
+#popupExamples {
 	top: 0;
 	left: 0;
 	transform: translateY(-55%);
 	height: 90vh;
 	position: fixed;
-	width: 127.35vh;
+	width: 100vw;
 	background: #fef;
 	display: none;
 	opacity: 0;
@@ -1071,6 +1074,16 @@ html.active{
 }
 
 
+#popupExamples > .super-slider > .slick-list > .slick-track > .prices-examples__subitem{
+	margin-top: 10px;
+	width: 89vw;
+	height: 85vh;
+	img{
+		width: 100%;
+		height: 100%;
+	}
+}
+
 #popUp > .prices-examples__item > .prices-examples__subslaider{
 	margin-top: 10px;
 	width: 89vw;
@@ -1080,8 +1093,6 @@ html.active{
 		height: 100%;
 	}
 }
-
-
 
 
 .popup__closest{
@@ -1113,7 +1124,18 @@ html.active{
 	}
 }
 
+.super-slider {
+	margin-right: 0px;
+	width: 100vw;
+	height: 90vh;
+	position: relative; //*Для стрелок слайдера
+	padding: 0px 0px; //*Для стрелок слайдера
+	min-width: 0;
 
+	button{
+		border: none;
+	}
+}
 
 
 .block {
@@ -1134,6 +1156,65 @@ html.active{
 
 
 //* -----------слайдер-------------//
+.super-slider .slick-arrow{
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+	z-index: 10;
+	font-size: 0;
+	width: 50px;
+	height: 100px;
+	&::after{
+		display: none;
+	}
+
+	@media (max-width: 768px){
+
+	}
+
+	//* Стрелка влево */
+	&.slick-prev{
+		left: 10px;
+		background: url('/img/finished/2-prices-and-examples/left-arrow.svg') 0 0 / 100% no-repeat;
+	}
+	//* Стрелка вправо */
+	&.slick-next{
+		right: 10px;
+		background: url('/img/finished/2-prices-and-examples/right-arrow.svg') 0 0 / 100% no-repeat;
+		transform: rotate(360deg);
+	}
+}
+
+//* Точки (булиты) */
+.super-slider .slick-dots{
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	li{
+		list-style: none;
+		margin: 10px 10px;
+
+	}
+	//* Активная точка */
+	& li.slick-active button{
+		background-color: transparent;
+		border: 1px solid #404A54;
+		transition: all 0.5s ease 0s;
+	}
+
+	//* Элемент точки */
+	& li button{
+		font-size: 0;
+		width: 10px;
+		height: 10px;
+		background-color: #404A54;
+		border-radius: 50%;
+		transition: all 0.5s ease 0s;
+		border: 1px solid #404A54;
+	}
+}
 
 //* Стрелки слайдера*/
 .prices-examples__slaider .slick-arrow{
@@ -3595,9 +3676,30 @@ html.active{
 }
 
 
+#popUp {
+	top: 0;
+	left: 0;
+	transform: translateY(-55%);
+	height: 90vh;
+	position: fixed;
+	width: 127.35vh;
+	background: #fef;
+	display: none;
+	opacity: 0;
+	z-index: 10;
+
+	img{
+		height: 100%;
+		width: 100%;
+	}
+
+}
 
 @media (max-width: 1500px){
-
+	#popUp{
+		width: 100vw;
+		height: 70.67vw;
+	}
 	.example-project {
 
 		// .example-project__block
@@ -3693,7 +3795,7 @@ html.active{
 
 @media (max-width: 768px){
 
-// пока нет изменений
+
 
 }
 
