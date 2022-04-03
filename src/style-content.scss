@@ -931,8 +931,13 @@ html.active{
 	}
 
 	&__subslaider{
-
-
+		min-width: 0;
+		position: relative; //*Для стрелок слайдера
+		padding: 0px 0px; //*Для стрелок слайдера
+		height: 530px;
+		button{
+			border: none;
+		}
 	}
 
 	&__subitem {
@@ -1050,9 +1055,9 @@ html.active{
 	top: 0;
 	left: 0;
 	transform: translateY(-55%);
-	height: 95vh;
+	height: 90vh;
 	position: fixed;
-	width: 100vw;
+	width: 127.35vh;
 	background: #fef;
 	display: none;
 	opacity: 0;
@@ -1064,6 +1069,21 @@ html.active{
 	}
 
 }
+
+
+#popUp > .prices-examples__item > .prices-examples__subslaider{
+	margin-top: 10px;
+	width: 89vw;
+	// height: 80vh;
+	img{
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
+
+
 .popup__closest{
 	width: 50px;
 	height: 50px;
@@ -1073,7 +1093,7 @@ html.active{
 	content: '';
 	position: absolute;
 	top: 5%;
-	left: 90%;
+	left: 92vw;
 	z-index: 12;
 	opacity: 0.8;
 	&::after, &::before{
@@ -1146,8 +1166,6 @@ html.active{
 }
 
 
-
-
 /* Слайдер */
 .slick-slider{}
 /* Слайдер запущен */
@@ -1180,6 +1198,35 @@ html.active{
 /* Стрелка не активная */
 .slick-arrow.slick-disabled{}
 
+//* -----------слайдер в слайдере-------------//
+.prices-examples__subslaider .slick-arrow{
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+	z-index: 10;
+	font-size: 0;
+	width: 50px;
+	height: 100px;
+	&::after{
+		display: none;
+	}
+
+	@media (max-width: 768px){
+
+	}
+
+	//* Стрелка влево */
+	&.slick-prev{
+		left: 10px;
+		background: url('/img/finished/2-prices-and-examples/left-arrow.svg') 0 0 / 100% no-repeat;
+	}
+	//* Стрелка вправо */
+	&.slick-next{
+		right: 10px;
+		background: url('/img/finished/2-prices-and-examples/right-arrow.svg') 0 0 / 100% no-repeat;
+		transform: rotate(360deg);
+	}
+}
 
 
 
@@ -1204,11 +1251,12 @@ html.active{
 	// .page__title
 
 	&__title {
+		font-family: 'RobotoBold';
 		margin-top: 510px;
-		margin-left: 83px;
-		line-height: 55px;
-		font-weight: 700;
-		font-size: 55px;
+		margin-left: 90px;
+		max-width: 460px;
+		line-height: 110%;
+		font-size: 50px;
 		text-transform: uppercase;
 		color: #FFFFFF;
 	}
@@ -1516,14 +1564,13 @@ html.active{
 	// .flip-chart__title
 
 	&__title {
-		font-style: normal;
-		font-weight: 700;
+		font-family: 'RobotoBold';
 		font-size: 50px;
 		line-height: 110%;
 		text-transform: uppercase;
 		color: #FFFFFF;
 		&_two{
-			font-size: 40px;
+			font-size: 50px;
 		}
 	}
 
@@ -1885,8 +1932,8 @@ html.active{
 
 	&__title {
 		max-width: 220px;
-		font-size: 55px;
-		line-height: 100%;
+		font-size: 50px;
+		line-height: 110%;
 		text-transform: uppercase;
 	}
 
@@ -1914,6 +1961,7 @@ html.active{
 		font-size: 20px;
 		margin-top: 40px;
 		line-height: 22px;
+		max-width: 490px;
 	}
 
 	// .board__button
@@ -2489,7 +2537,7 @@ html.active{
 		left: 100%;
 		width: 0;
 		height: 0;
-		z-index: 1;
+		z-index: 3;
 		img{
 			transform: translateX(-37.5%);
 			border-radius: 10px;
@@ -2532,7 +2580,9 @@ html.active{
 	// .board__text
 
 	&__text {
-
+		&_stages-work{
+			margin-left: 50px;
+		}
 	}
 
 	// .board__title
@@ -2601,29 +2651,18 @@ html.active{
 	display: flex; //^ что бы слайды расположились в ряд
 }
 /* Слайд */
-.slick-slide{}
+.slider__element.slick-slide{opacity: 0.8;transform: scale(0.98); z-index: -1; transition: all 0.3s ease 0s;}
 /* Слайд активный (показывается) */
-.slick-slide.slick-active{}
+.slider__element.slick-slide.slick-active{opacity: 0.9;transform: scale(0.98);z-index: -1;}
 /* Слайд основной */
-.slick-slide.slick-current{}
+.slider__element.slick-slide.slick-current{}
 /* Слайд по центру */
-.slick-slide.slick-center{}
+.slider__element.slick-slide.slick-center{opacity: 1; transform: scale(1);z-index: 1; transition: all 0.3s ease 0s; }
 /* Клонированный слайд */
-.slick-slide.slick-cloned{}
-
+.slick-slide.slick-cloned{opacity: 0.8; z-index: -1; transition: all 0.3s ease 0s;}
 
 /* Стрелка не активная */
 .slick-arrow.slick-disabled{}
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3056,6 +3095,9 @@ html.active{
 
 	&__text {
 		margin-top: 90px;
+		&_project-work{
+			margin-left: 50px;
+		}
 	}
 
 	// .board__title
@@ -3409,6 +3451,7 @@ html.active{
 		padding-bottom: 17.668%; /* соотношение 16:9 */
 		height: 0;
 		overflow: hidden;
+		z-index: 3;
 		img{
 			position: absolute;
 			top: 0;
@@ -3434,7 +3477,7 @@ html.active{
 	position: absolute;
 	top: 50%;
 	margin-top: -20px;
-	z-index: 10;
+	z-index: 0;
 	font-size: 0;
 	width: 50px;
 	height: 100px;
@@ -3470,8 +3513,6 @@ html.active{
 	overflow: hidden; //^ что-бы край предыдущего слайда не торчал из за экрана.
 	//! ВНИМАНИЕ!!! Когда слайдер находиться внутри FLAX-элемента или САМ ЯВЛЯЕТСЯ FLAX-элементом, тогда ОБЯЗАТЕЛЬНО для FLAX-элемента нуэжно указать параметр:
 	//&MIN-WIDTH:0;
-
-
 }
 /* Лента слайдов */
 .slick-track{
@@ -3496,6 +3537,9 @@ html.active{
 	// .board__text
 
 	&__text {
+		&_example-project{
+			margin-left: 50px;
+		}
 	}
 
 	// .board__title
@@ -3523,6 +3567,11 @@ html.active{
 
 	}
 
+	&__bodytext{
+		&_example-project{
+			max-width: 500px;
+		}
+	}
 	// .board__button
 
 	&__button {
@@ -3624,7 +3673,9 @@ html.active{
 		}
 
 		&__bodytext{
-			max-width: 500px;
+			&_example-project{
+				max-width: 500px;
+			}
 		}
 
 		// .board__button
@@ -3703,7 +3754,7 @@ html.active{
 	&__slogan {
 		content: '';
 		position: absolute;
-		top: 90%;
+		top: 87%;
 		left: 60%;
 		display: flex;
 		align-items: center;
@@ -4186,10 +4237,10 @@ html.active{
 		&__header {
 			display: flex;
 			flex-direction: column-reverse;
-
+			justify-content: space-between;
 			max-width: 100%;
-			height: 70px;
-
+			height: 100px;
+			background-color: #404A54;
 			position: relative;
 		}
 
@@ -4240,13 +4291,11 @@ html.active{
 				flex: 0 1 auto;
 				right: 0;
 				position: absolute;
-
 			}
 			&_two{
 				width: 400px;
 				height: 20px;
 				flex: 0 1 auto;
-
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -4255,17 +4304,18 @@ html.active{
 
 		&__text {
 			flex: 1 0 855px;
+			padding-left: 35px;
 			// display:flex;
 			// justify-content: center;
 			// align-items: center;
-			background-color: #FFFFFF;
+			// background-color: #FFFFFF;
 			// font-family: 'RobotoBold';
 			// font-size: 18px;
 			// line-height: 110%;
 			// text-transform: uppercase;
-			color: #404A54;
+			color: #FFFFFF;
 			max-height: 30px;
-			margin-bottom: 18px;
+			margin-bottom: 40px;
 		}
 
 	}

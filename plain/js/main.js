@@ -287,10 +287,6 @@ var skmir = new function() {
                 slidesToShow:1,
                 swipe:false,
                 infinite: false,
-                // vertical:true,
-                // verticalSwiping:true,
-                // fade:true,
-
                 responsive:[
                     {
                         breakpoint: 768,
@@ -311,29 +307,12 @@ var skmir = new function() {
                 }
             });
 
-            $('.prices-examples__subslaider').slick({
-                arrows:true,
-                dots:false,
-                speed:500,
-                easing:'ease',
-                autoplay:false,
-                autoplaySpeed: 2000,
-                waitForAnimate:false,
-                slidesToShow:1,
-                // vertical:true,
-                // verticalSwiping:true,
-                // fade:true,
-
-                responsive:[
-                    {
-                        breakpoint: 768,
-                        settings:{
-                            dots:false,
-                            arrows:false,
-                        }
-                    }
-                ]
+            $('button[data-slide]').click(function(e) {
+                e.preventDefault();
+                var slideno = $(this).data('slide');
+                $('.prices-examples__slaider').slick('slickGoTo', slideno - 1);
             });
+
 
 
             $('.example-project__slaider').slick({
@@ -346,11 +325,6 @@ var skmir = new function() {
                 autoplaySpeed: 1000,
                 waitForAnimate:false,
                 slidesToShow:1,
-
-                // vertical:true,
-                // verticalSwiping:true,
-                // fade:true,
-
                 responsive:[
                     {
                         breakpoint: 768,
@@ -362,125 +336,112 @@ var skmir = new function() {
                 ]
             });
 
-            //^ пока убрат т.к. пересекается
-            // $('.example-project__slaider img').click( function(event){
-            //     if($(window).width() > 1024) {
-            //     let item = $(this).attr('src');
-            //     $('#popUp').append('<img src="'+item+'">');
-            //     event.preventDefault();
-            //     $('#overlay').fadeIn(250, function(){
-            //             $('#popUp').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
-            //             $('body').css('overflow', 'hidden')
-            //         });}
-            //     }); /*по нажатию на крестик закрываю окно*/
-            //         $('#overlay, #popUp').click( function(){
-            //             $('#popUp')
-            //             .animate({opacity: 0, top: '35%'}, 490,
-            //             function(){
-            //                 $(this).css('display', 'none');
-            //                 $('#overlay').fadeOut(220);
-            //                 $('body').css('overflow', 'auto')
-            //                 $('#popUp img').remove();
-            //             });
-            // });
+
+            $('.example-project__slaider img').click( function(event){
+                let item = $(this).attr('src');
+                $('#popUp').append('<img src="'+item+'">');
+                event.preventDefault();
+                $('#overlay').fadeIn(250, function(){
+                        $('#popUp').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
+                        $('body').css('overflow', 'hidden')
+                    });
+                }); /*по нажатию на крестик закрываю окно*/
+                    $('#overlay, .popup__closest').click( function(){
+                        $('#popUp')
+                        .animate({opacity: 0, top: '35%'}, 490,
+                        function(){
+                            $(this).css('display', 'none');
+                            $('#overlay').fadeOut(220);
+                            $('body').css('overflow', 'auto')
+                            $('#popUp img').remove();
+                        });
+            });
 
 
 
             if($(window).width() <= 1070) {
                 $('.stages-work__slider').slick({
-                    arrows:true,
-                    dots:false,
-                    speed:1000,
+                    centerMode: true,
+                    centerPadding: '0',
+                    lazyLoad: 'ondemand',
+                    variableWidth: true,
+                    cssEase: 'linear',
+                    // arrows:true,
+                    // speed:1000,
                     easing:'ease',
-                    autoplay:false,
-                    autoplaySpeed: 1000,
-                    waitForAnimate:false,
-                    slidesToShow:6,
+                    // autoplay:false,
+                    // autoplaySpeed: 1000,
+                    // waitForAnimate:false,
+                    slidesToShow:1,
                     slidesToScroll:1,
                     infinite: true, //карусель
                     responsive:[
                         {
-                            breakpoint: 768,
+                            breakpoint: 620,
                             settings:{
                                 arrows:false,
-                                slidesToShow: 3,
+                                slidesToShow: 1,
                                 autoplay:false,
-                                slidesToScroll: 2,
+                                slidesToScroll: 1,
                             }
                         }
                     ]
-
-
 
                 });
             }
 
 
+            $('.prices-examples__subslaider').slick({
+                arrows:true,
+                dots:false,
+                speed:500,
+                easing:'ease',
+                autoplay:false,
+                autoplaySpeed: 2000,
+                waitForAnimate:false,
+                slidesToShow:1,
+                swipe:true,
+                responsive:[
+                    {
+                        breakpoint: 768,
+                        settings:{
+                            dots:false,
+                            arrows:false,
+                        }
+                    }
+                ]
+            });
 
 
 
-
-
-                $('button[data-slide]').click(function(e) {
-                    e.preventDefault();
-                    var slideno = $(this).data('slide');
-                    $('.prices-examples__slaider').slick('slickGoTo', slideno - 1);
+            $('.prices-examples__item img').click( function(event){
+                if ($(event.target).closest('.prices-examples__subslaider button').length) return; // елис клик по кнопкам навигации, то возвращаем функцию
+                let item = $(this).attr('src');
+                $('#popUp').append('<img src="'+item+'">');
+                event.preventDefault();
+                $('#overlay').fadeIn(250, function(){
+                        $('#popUp').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
+                        $('body').css('overflow', 'hidden');
+                        $('.prices-examples__price-list').css('display', 'none');
                 });
 
-
-                // $('.prices-examples__item img').click( function(event){
-                //     if($(window).width() > 1024) {
-                //     let item = $(this).attr('src');
-                //     $('#popUp').append('<img src="'+item+'">');
-                //     event.preventDefault();
-                //     $('#overlay').fadeIn(250, function(){
-                //             $('#popUp').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
-                //             $('body').css('overflow', 'hidden')
-                //         });}
-                //     }); /*по нажатию на крестик закрываю окно*/
-                //         $('#overlay, #popUp').click( function(){
-                //             $('#popUp')
-                //             .animate({opacity: 0, top: '35%'}, 490,
-                //             function(){
-                //                 $(this).css('display', 'none');
-                //                 $('#overlay').fadeOut(220);
-                //                 $('body').css('overflow', 'auto')
-                //                 $('#popUp img').remove();
-                //             });
-                //     });
+            });
 
 
+                $('#overlay, .popup__closest').click( function(){
 
-                    $('.prices-examples__item').click( function(event){
-
-
-                        if ($(event.target).closest('.prices-examples__subslaider button').length) return; // елис клик по кнопкам навигации, то возвращаем функцию
-
-                        let item = $(this).attr('data-slick-index'); // елис клик по кнопкам навигации, то возвращаем функцию
-
-                        // клолнируем элемент вкладки-слайдера
-                        let subitemClone = this.cloneNode(true);
-                        // добавляем его в попап
-                        $('#popUp').append(subitemClone);
-
-                        $('#overlay').fadeIn(250, function(){
-                                $('#popUp').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
-                                $('body').css('overflow', 'hidden')
-                                $('.prices-examples__price-list').css('display', 'none')
-                        });
-
-                        });
-                            $('#overlay, .popup__closest').click( function(){
-                                $('#popUp').animate({opacity: 0, top: '35%'}, 490,function(){
-                                    $('.prices-examples__price-list').css('display', 'block')
-                                    $(this).css('display', 'none');
-                                    $('#overlay').fadeOut(220);
-                                    $('body').css('overflow', 'auto')
-                                    $('#popUp > div').remove(); // удаляем его из попап
-                                });
-                        });
+                    $('#popUp').animate({opacity: 0, top: '35%'}, 490,function(){
+                            $('.prices-examples__price-list').css('display', 'block')
+                            $(this).css('display', 'none');
+                            // $('#overlay').css('display', 'none');
+                            // $('#popUp').css('display', 'none');
+                            $('#overlay').fadeOut(220);
+                            $('body').css('overflow', 'auto')
+                            $('#popUp > img').remove(); // удаляем его из попап
+                    });
 
 
+                });
 
 
                 $(document).ready(function(){
