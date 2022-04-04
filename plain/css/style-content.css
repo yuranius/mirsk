@@ -693,6 +693,7 @@ html.active {
   position: relative;
   padding: 0px 0px;
   min-width: 0;
+  cursor: pointer;
 }
 
 .prices-examples__slaider button {
@@ -925,6 +926,7 @@ html.active {
   font-size: 0;
   width: 50px;
   height: 100px;
+  cursor: pointer;
 }
 
 .super-slider .slick-arrow::after {
@@ -977,6 +979,7 @@ html.active {
   -webkit-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
   border: 1px solid #404A54;
+  cursor: pointer;
 }
 
 .prices-examples__slaider .slick-arrow {
@@ -987,6 +990,7 @@ html.active {
   font-size: 0;
   width: 50px;
   height: 100px;
+  cursor: pointer;
 }
 
 .prices-examples__slaider .slick-arrow::after {
@@ -2557,6 +2561,7 @@ html.active {
   margin: 115px 95px;
   position: relative;
   padding: 0px 0px;
+  cursor: pointer;
 }
 
 .example-project__slaider button {
@@ -2598,6 +2603,7 @@ html.active {
   height: 100px;
   margin-left: -80px;
   margin-right: -80px;
+  cursor: pointer;
 }
 
 .example-project__slaider .slick-arrow.slick-prev {

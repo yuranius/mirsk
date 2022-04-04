@@ -927,6 +927,7 @@ html.active{
 		position: relative; //*Для стрелок слайдера
 		padding: 0px 0px; //*Для стрелок слайдера
 		min-width: 0;
+		cursor: pointer;
 
 		button{
 			border: none;
@@ -1164,6 +1165,7 @@ html.active{
 	font-size: 0;
 	width: 50px;
 	height: 100px;
+	cursor: pointer;
 	&::after{
 		display: none;
 	}
@@ -1213,6 +1215,7 @@ html.active{
 		border-radius: 50%;
 		transition: all 0.5s ease 0s;
 		border: 1px solid #404A54;
+		cursor: pointer;
 	}
 }
 
@@ -1225,6 +1228,7 @@ html.active{
 	font-size: 0;
 	width: 50px;
 	height: 100px;
+	cursor: pointer;
 	&::after{
 		display: none;
 	}
@@ -3522,6 +3526,7 @@ html.active{
 		margin: 115px 95px;
 		position: relative; //*Для стрелок слайдера
 		padding: 0px 0px; //*Для стрелок слайдера
+		cursor: pointer;
 		button{
 			border: none;
 		}
@@ -3564,6 +3569,7 @@ html.active{
 	height: 100px;
 	margin-left: -80px;
 	margin-right: -80px;
+	cursor: pointer;
 
 	@media (max-width: 767px){
 
