@@ -283,7 +283,7 @@ var skmir = new function() {
                 easing:'ease',
                 autoplay:false,
                 autoplaySpeed: 2000,
-                waitForAnimate:false,
+                waitForAnimate:true,
                 slidesToShow:1,
                 swipe:false,
                 infinite: false,
@@ -323,7 +323,7 @@ var skmir = new function() {
                 easing:'ease',
                 autoplay:false,
                 autoplaySpeed: 1000,
-                waitForAnimate:false,
+                waitForAnimate:true,
                 slidesToShow:1,
                 responsive:[
                     {
@@ -366,12 +366,9 @@ var skmir = new function() {
                     lazyLoad: 'ondemand',
                     variableWidth: true,
                     cssEase: 'linear',
-                    // arrows:true,
-                    // speed:1000,
+                    speed:1000,
                     easing:'ease',
-                    // autoplay:false,
-                    // autoplaySpeed: 1000,
-                    // waitForAnimate:false,
+                    waitForAnimate:true,
                     slidesToShow:1,
                     slidesToScroll:1,
                     infinite: true, //карусель
@@ -414,8 +411,7 @@ var skmir = new function() {
 
             let initSlaider = true;
             const subsliderInit = function(){
-                console.log("инициализирован");
-                $('.super-slider').slick({
+                 $('.super-slider').slick({
                     arrows:true,
                     dots:true,
                     speed:500,
@@ -437,8 +433,6 @@ var skmir = new function() {
 
             $('.prices-examples__item img').click( function(event){
                 if ($(event.target).closest('.prices-examples__subslaider button').length) return; // елис клик по кнопкам навигации, то возвращаем функцию
-                // let item = $(this).attr('src');
-                // $('#popUp').append('<img src="'+item+'">');
                 event.preventDefault();
                 let parent = $(this).parent().parent().children("div:not(.slick-cloned)");//"div:not(.slick-active)div:not(.slick-cloned)"
                 let subitemClone = parent.clone(true);
