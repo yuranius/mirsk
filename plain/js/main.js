@@ -272,6 +272,13 @@ var skmir = new function() {
 
 
         jQuery(document).ready(function($){
+
+            if($(window).width() <= 768) {
+                $('.header__titlelogo img').removeAttr('src')
+                $('.header__titlelogo img').attr('src','/img/finished/logo_2-1.svg')
+                $('.header__titlelogo a').append('<img src="/img/finished/logo_2-2.svg" alt="логотип" title="логотип"></a>');
+            }
+
             $('.header__burger').click(function(e){
                 $('html, .header__burger,.header__menu').toggleClass('active')
             })
@@ -286,7 +293,7 @@ var skmir = new function() {
                 waitForAnimate:true,
                 slidesToShow:1,
                 swipe:false,
-                infinite: false,
+                infinite: true,
                 responsive:[
                     {
                         breakpoint: 768,
@@ -321,8 +328,6 @@ var skmir = new function() {
                 dots:false,
                 speed:1000,
                 easing:'ease',
-                autoplay:false,
-                autoplaySpeed: 1000,
                 waitForAnimate:true,
                 slidesToShow:1,
                 responsive:[
@@ -393,9 +398,7 @@ var skmir = new function() {
                 dots:false,
                 speed:500,
                 easing:'ease',
-                autoplay:false,
-                autoplaySpeed: 2000,
-                waitForAnimate:false,
+                waitForAnimate:true,
                 slidesToShow:1,
                 swipe:true,
                 responsive:[
@@ -416,7 +419,7 @@ var skmir = new function() {
                     dots:true,
                     speed:500,
                     easing:'ease',
-                    waitForAnimate:false,
+                    waitForAnimate:true,
                     slidesToShow:1,
                     swipe:true,
                     responsive:[

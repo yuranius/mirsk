@@ -65,7 +65,7 @@ html.active{
 
 	&__burger {
 		position: absolute;
-		top: -30px;
+		top: -32px;
 		left: calc(320px + (680 - 320) * ((100vw - 400px) / (768 - 400)));
 	}
 
@@ -178,7 +178,20 @@ html.active{
 			margin: 25px 0px;
 		}
 	}
+	&__titlelogo{
+		width: 100px;
+		img{
+			width: 100%;
+			height: 100%;
+		}
+	}
 
+	&__titlelogo a{
+		padding-top: 5px;
+		display:flex;
+		justify-content: center;
+		align-items: center;
+	}
 
 	&__list{
 		display: block;
@@ -608,16 +621,13 @@ html.active{
 	}
 
 	.cover-text {
-		font-family: 'RobotoRegular';
 		font-size: calc(18px + (21 - 18) * ((100vw - 510px) / (768 - 510)));;
-
 		line-height: 23px;
-		// letter-spacing: 0em;
 		text-align: left;
-		// color: #404A54;
 		text-transform:none;
 		max-width: 100%;
 		margin: 10px 5px 10px 45px;
+		color: #616970;
 		&_botton{
 			margin: 10px 0px 10px 5px;
 			max-width: 350px;
@@ -642,6 +652,7 @@ html.active{
 		&__description {
 			min-height: 280px !important;
 			max-width: 100%;
+			background-color: transparent;
 			// position: relative;
 			p {
 				margin-left: 15px;
@@ -3685,7 +3696,7 @@ html.active{
 
 #popUp {
 	top: 0;
-	left: calc((100vw - 80vw) /2);
+	left: calc((100vw - 127.35vh) /2);
 	transform: translateY(-55%);
 	height: 90vh;
 	position: fixed;
@@ -3701,12 +3712,19 @@ html.active{
 	}
 }
 
+#popUp > .popup__closest{
+	left: 72vw;
+}
+
 @media (max-width: 1500px){
 	#popUp{
 		left: 0;
 		width: 100vw;
 		height: 70.67vw;
 		max-width: 100vw;
+	}
+	#popUp > .popup__closest{
+		left: 92vw;
 	}
 	.example-project {
 
