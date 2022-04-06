@@ -548,10 +548,19 @@
                 margin-top: 40px;
             }
             &__slaider {
-                margin: 10px 10px !important;
+                // margin: 10px 10px !important;
+            }
+
+            &__item{
+                position: static;
+                padding-bottom: 0%;
+                height: 76.67vw; /* соотношение 1:1.415 */
+                img{
+                    position:sticky;
+                }
             }
             &__principal {
-                max-height: 450px;
+                // max-height: 450px;
             }
             &__board {
                 height: 550px !important;
