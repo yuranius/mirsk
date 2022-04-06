@@ -3,7 +3,16 @@
 		&__text{
 			flex-direction: column;
 		}
-}
+	}
+	.board{
+		&__button {
+			&_example-project{
+				button{
+				font-size: 14px;
+				}
+			}
+		}
+	}
 }
 
 @media (max-width: 320px){

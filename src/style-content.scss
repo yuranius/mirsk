@@ -3539,23 +3539,12 @@ html.active{
 	// .example-project__slaider
 
 	&__slaider {
-<<<<<<< HEAD
 		--widthS: calc(80%);
 		max-width: var(--widthS);
 		--heightS: calc(var(--widthS) / 1.415);
 		max-height: var(--heightS);
 		margin-top: 125px;
 		margin-left: 110px;
-=======
-		--heightPrincipal: 900px;
-		--widthS: calc(95vw / 2);
-		max-width: var(--widthS);
-		--heightS: calc(var(--widthS) / 1.415);
-		max-height: var(--heightS);
-		--marginTop: calc((var(--heightPrincipal) - var(--heightS)) / 2);
-		margin-top: var(--marginTop);
-		margin-left: 93px;
->>>>>>> 450b494f5d8404651b92a83604666a34edf0bc8b
 		position: relative; //*Для стрелок слайдера
 		padding: 0px 0px; //*Для стрелок слайдера
 		cursor: pointer;
