@@ -12,6 +12,7 @@
             font-family: "Roboto";
             font-weight: 400;
             font-size: calc(14px + (21 - 14) * ((100vw - 320px) / (510 - 320)));
+            margin-top: 40px;
         }
 
         &__title {
@@ -19,7 +20,8 @@
             max-width: 50%;
         }
         &__subtitle {
-            left: 45%;
+            left: 55%;
+            max-width: 40vw;
         }
     }
 

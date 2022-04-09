@@ -323,7 +323,6 @@ var skmir = new function() {
 
 
             $('.example-project__slaider').slick({
-
                 arrows:true,
                 dots:false,
                 speed:1000,
@@ -340,29 +339,6 @@ var skmir = new function() {
                     }
                 ]
             });
-
-
-            $('.example-project__slaider img').click( function(event){
-                let item = $(this).attr('src');
-                $('#popUp').append('<img src="'+item+'">');
-                event.preventDefault();
-                $('#overlay').fadeIn(250, function(){
-                        $('#popUp').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
-                        $('body').css('overflow', 'hidden')
-                    });
-                }); /*по нажатию на крестик закрываю окно*/
-                    $('#overlay, .popup__closest').click( function(){
-                        $('#popUp')
-                        .animate({opacity: 0, top: '35%'}, 490,
-                        function(){
-                            $(this).css('display', 'none');
-                            $('#overlay').fadeOut(220);
-                            $('body').css('overflow', 'auto')
-                            $('#popUp img').remove();
-                        });
-            });
-
-
 
             if($(window).width() <= 1070) {
                 $('.stages-work__slider').slick({
@@ -393,30 +369,9 @@ var skmir = new function() {
             }
 
 
-            $('.prices-examples__subslaider').slick({
-                arrows:true,
-                dots:false,
-                speed:500,
-                easing:'ease',
-                waitForAnimate:true,
-                slidesToShow:1,
-                swipe:true,
-                responsive:[
-                    {
-                        breakpoint: 768,
-                        settings:{
-                            dots:false,
-                            arrows:false,
-                        }
-                    }
-                ]
-            });
-
-            let initSlaider = true;
-            const subsliderInit = function(){
-                 $('.super-slider').slick({
+                $('.prices-examples__subslaider').slick({
                     arrows:true,
-                    dots:true,
+                    dots:false,
                     speed:500,
                     easing:'ease',
                     waitForAnimate:true,
@@ -424,62 +379,143 @@ var skmir = new function() {
                     swipe:true,
                     responsive:[
                         {
-                            breakpoint: 620,
+                            breakpoint: 768,
                             settings:{
-                                // dots:false,
+                                dots:false,
                                 arrows:false,
                             }
-                            }
-                        ]
-                    });
-            };
+                        }
+                    ]
+                });
 
-            $('.prices-examples__item img').click( function(event){
-                if ($(event.target).closest('.prices-examples__subslaider button').length) return; // елис клик по кнопкам навигации, то возвращаем функцию
-                event.preventDefault();
-                let parent = $(this).parent().parent().children("div:not(.slick-cloned)");//"div:not(.slick-active)div:not(.slick-cloned)"
-                let subitemClone = parent.clone(true);
-                $(subitemClone).removeAttr('role');
-                $(subitemClone).removeAttr('data-slick-index');
-                $(subitemClone).removeAttr('aria-hidden');
-                $(subitemClone).removeAttr('tabindex');
-                $(subitemClone).removeAttr('style');
-                $(subitemClone).removeAttr('aria-describedby');
-                $(subitemClone).removeClass('slick-slide');
+                let initSlaider = true;
+                const subsliderInit = function(){
+                    $('.super-slider').slick({
+                        arrows:true,
+                        dots:true,
+                        speed:500,
+                        easing:'ease',
+                        waitForAnimate:true,
+                        slidesToShow:1,
+                        swipe:true,
+                        responsive:[
+                            {
+                                breakpoint: 768,
+                                settings:{
+                                    arrows:false,
+                                }
+                                }
+                            ]
+                        });
+                };
 
-                console.log(parent);
-                    console.log(subitemClone);
-
-                if (initSlaider == true) {
-                $('#overlay').fadeIn(250, function(){
-                        $('#popupExamples').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
-                        $('body').css('overflow', 'hidden');
-                        $('.prices-examples__price-list').css('display', 'none');
-                        $('#popupExamples').append('<div class="super-slider"></div>');
-                        $('.super-slider').append(subitemClone);
-                        subsliderInit();
-                        console.log("fdgdgggd");
-                        initSlaider = false;
-                });}
-            });
-
+                $('.prices-examples__item img').click( function(event){
+                    if ($(event.target).closest('.prices-examples__subslaider button').length) return; // елис клик по кнопкам навигации, то возвращаем функцию
+                    event.preventDefault();
+                    let parent = $(this).parent().parent().children("div:not(.slick-cloned)");//"div:not(.slick-active)div:not(.slick-cloned)"
+                    let subitemClone = parent.clone(true);
+                    $(subitemClone).removeAttr('role');
+                    $(subitemClone).removeAttr('data-slick-index');
+                    $(subitemClone).removeAttr('aria-hidden');
+                    $(subitemClone).removeAttr('tabindex');
+                    $(subitemClone).removeAttr('style');
+                    $(subitemClone).removeAttr('aria-describedby');
+                    $(subitemClone).removeClass('slick-slide');
+                    let activeSlide = $(this).parent();
+                    let dataId = $(activeSlide).attr("data-slick-index");
+                    if (initSlaider == true) {
+                    $('#overlay').fadeIn(250, function(){
+                            $('#popupExamples').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
+                            $('body').css('overflow', 'hidden');
+                            $('.prices-examples__price-list').css('display', 'none');
+                            $('#popupExamples').append('<div class="super-slider"></div>');
+                            $('.super-slider').append(subitemClone);
+                            subsliderInit();
+                            initSlaider = false;
+                            $('.super-slider').slick('slickGoTo', dataId);
+                    });}
+                });
 
                 $('#overlay, .popup__closest').click( function(){
 
                     $('#popupExamples').animate({opacity: 0, top: '35%'}, 490,function(){
                             $('.prices-examples__price-list').css('display', 'block')
                             $(this).css('display', 'none');
-                            // $('#overlay').css('display', 'none');
-                            // $('#popUp').css('display', 'none');
                             $('#overlay').fadeOut(220);
                             $('body').css('overflow', 'auto')
-                            $('#popupExamples > div').remove(); // удаляем его из попап
+                            $('#popupExamples > div').remove();
                             subsliderInit();
                             initSlaider = true;
                     });
 
 
                 });
+
+                //* ------------------  Пример проекта-------------------->
+                let initSlaiderExPr = true;
+                const subsliderInitExPr = function(){
+                    $('.super-slider-ExPr').slick({
+                        arrows:true,
+                        dots:true,
+                        speed:500,
+                        easing:'ease',
+                        waitForAnimate:true,
+                        slidesToShow:1,
+                        initialSlide: 1,
+                        swipe:true,
+                        responsive:[
+                            {
+                                breakpoint: 768,
+                                settings:{
+                                    dots:false,
+                                    arrows:false,
+                                }
+                                }
+                            ]
+                        });
+                };
+
+
+                $('.example-project__item img').click( function(event){
+                    event.preventDefault();
+                    let parent = $(this).parent().parent().children("div:not(.slick-cloned)");
+                    let subitemCloneExPr = parent.clone(true);
+                    $(subitemCloneExPr).removeAttr('role');
+                    $(subitemCloneExPr).removeAttr('data-slick-index');
+                    $(subitemCloneExPr).removeAttr('aria-hidden');
+                    $(subitemCloneExPr).removeAttr('tabindex');
+                    $(subitemCloneExPr).removeAttr('style');
+                    $(subitemCloneExPr).removeAttr('aria-describedby');
+                    $(subitemCloneExPr).removeClass('slick-slide');
+                    let activeSlide = $(this).parent();
+                    let dataId = $(activeSlide).attr("data-slick-index");
+                    if (initSlaiderExPr == true) {
+                    $('#overlay').fadeIn(250, function(){
+                            $('#popupProject').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
+                            $('body').css('overflow', 'hidden');
+                            $('#popupProject').append('<div class="super-slider-ExPr"></div>');
+                            $('.super-slider-ExPr').append(subitemCloneExPr);
+                            subsliderInitExPr();
+                            initSlaiderExPr = false;
+                            $('.super-slider-ExPr').slick('slickGoTo', dataId);
+                    });}
+                });
+
+                $('#overlay, .popup__closest_ExPr').click( function(){
+                    $('#popupProject').animate({opacity: 0, top: '35%'}, 490,function(){
+                            $(this).css('display', 'none');
+                            $('#overlay').fadeOut(220);
+                            $('body').css('overflow', 'auto')
+                            $('#popupProject > div').remove(); // удаляем его из попап
+                            subsliderInitExPr();
+                            initSlaiderExPr = true;
+                    });
+                });
+
+                //* ------------------  Пример проекта-------------------->
+
+
+
 
 
                 $(document).ready(function(){

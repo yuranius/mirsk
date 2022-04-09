@@ -1110,6 +1110,7 @@ html.active{
 	left: 83vw;
 	z-index: 12;
 	opacity: 0.8;
+	cursor: pointer;
 	&::after, &::before{
 		content: '';
 		left: 4.5px;
@@ -1462,6 +1463,22 @@ html.active{
 }
 
 @media (max-width: 768px){
+	#popupExamples {
+		top: 0;
+		left: 0;
+		transform: translateY(-55%);
+		height: 90vw;
+		position: fixed;
+		width: 100vw;
+
+	}
+
+
+	#popupExamples > .super-slider > .slick-list > .slick-track > .prices-examples__subitem{
+		width: 89vw;
+		height: 85vw;
+	}
+
 	.prices-examples {
 
 		// .prices-examples__block
@@ -3696,38 +3713,145 @@ html.active{
 	}
 }
 
-
-#popUp {
+#popupProject {
+	--heightPopUpPr: 90vh;
+	height: var(--heightPopUpPr);
+	--widthPopUpPrCalc: calc(var(--heightPopUpPr) * 1.415);
+	--widthPopUpPr: 100vw;
+	width: var(--widthPopUpPrCalc);
 	top: 0;
-	left: calc((100vw - 127.35vh) /2);
+	left: calc((var(--widthPopUpPr) - var(--widthPopUpPrCalc)) / 2 );
 	transform: translateY(-55%);
-	height: 90vh;
 	position: fixed;
-	width: 127.35vh;
 	background: #fef;
 	display: none;
 	opacity: 0;
 	z-index: 10;
-	max-width: 80vw;
+
 	img{
 		height: 100%;
 		width: 100%;
 	}
+
 }
 
-#popUp > .popup__closest{
-	left: 72vw;
+#popupProject > .super-slider-ExPr > .slick-list > .slick-track > .example-project__item{
+	--heightPopUpPr: 85vh;
+	height: var(--heightPopUpPr);
+	--widthPopUpPrCalc: calc(var(--heightPopUpPr) * 1.415);
+	width: var(--widthPopUpPrCalc);
+	img{
+		width: 100%;
+		height: 100%;
+	}
 }
+
+.popup__closest{
+	&_ExPr{
+		left: 77vw;
+	}
+}
+
+.super-slider-ExPr{
+	margin: 10px 35px;
+	position: relative; //*Для стрелок слайдера
+	padding: 0px 0px; //*Для стрелок слайдера
+	min-width: 0;
+
+	button{
+		border: none;
+	}
+}
+
+
+//* -----------слайдер-------------//
+.super-slider-ExPr .slick-arrow{
+	position: absolute;
+	top: 50%;
+	margin-top: -20px;
+	z-index: 10;
+	font-size: 0;
+	width: 50px;
+	height: 100px;
+	cursor: pointer;
+	&::after{
+		display: none;
+	}
+
+
+	//* Стрелка влево */
+	&.slick-prev{
+		left: 10px;
+		background: url('/img/finished/example/left-arrow.svg') 0 0 / 100% no-repeat;
+		opacity: 0.5;
+	}
+	//* Стрелка вправо */
+	&.slick-next{
+		right: 10px;
+		background: url('/img/finished/example/right-arrow.svg') 0 0 / 100% no-repeat;
+		transform: rotate(360deg);
+		opacity: 0.5;
+	}
+}
+
+//* Точки (булиты) */
+.super-slider-ExPr .slick-dots{
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	li{
+		list-style: none;
+		margin: 10px 10px;
+
+	}
+	//* Активная точка */
+	& li.slick-active button{
+		background-color: transparent;
+		border: 1px solid #404A54;
+		transition: all 0.5s ease 0s;
+	}
+
+	//* Элемент точки */
+	& li button{
+		font-size: 0;
+		width: 10px;
+		height: 10px;
+		background-color: #404A54;
+		border-radius: 50%;
+		transition: all 0.5s ease 0s;
+		border: 1px solid #404A54;
+		cursor: pointer;
+	}
+}
+
+
 
 @media (max-width: 1500px){
-	#popUp{
-		left: 0;
+	#popupProject {
+		width: 100vw;
 		height: 70.67vw;
-		max-width: 100%;
+		left: 0;
+		transform: translateY(-55%);
 	}
-	#popUp > .popup__closest{
-		left: 92vw;
+
+	#popupProject > .super-slider-ExPr > .slick-list > .slick-track > .example-project__item{
+		height: 63.6vw;
+		width: 100vw;
 	}
+
+	.popup__closest{
+		&_ExPr{
+			left: 92vw;
+		}
+	}
+
+	.super-slider-ExPr{
+		margin: 10px 5px;
+	}
+
+
 	.example-project {
 
 		// .example-project__block
