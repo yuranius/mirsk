@@ -3199,7 +3199,7 @@ html.active {
     padding-left: 35px;
     color: #FFFFFF;
     max-height: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
   }
   .answer-questyion > div:last-child {
     margin-bottom: 100px;
@@ -3219,7 +3219,7 @@ html.active {
   }
   .description__subtitle {
     left: 55%;
-    max-width: 40vw;
+    max-width: 80vw;
   }
   .block-text__board {
     display: none;
@@ -3804,6 +3804,33 @@ html.active {
 }
 
 @media (max-width: 320px) {
+  .slaider-menu__button {
+    width: 110px;
+    height: 50px;
+    border: none;
+    z-index: 3;
+    -webkit-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
+  }
+  .slaider-menu__button button {
+    border: 0.5px solid #007E82;
+  }
+  .slaider-menu__button button span {
+    font-size: 24px;
+  }
+  .slaider-menu__button .active {
+    font-family: "RobotoBold";
+    background-color: #007E82;
+    -webkit-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
+  }
+  .slaider-menu__button .active span:nth-child(2) {
+    display: block;
+    font-size: 14px;
+  }
+  .slaider-menu__button .active span:nth-child(1) {
+    display: none;
+  }
   .description__text {
     font-size: 14px !important;
   }
@@ -3837,5 +3864,11 @@ html.active {
   }
   .cover-arrow {
     display: none;
+  }
+  .board__button_find-price button {
+    font-size: 12px;
+  }
+  .board__subtitle_stages-work span:last-child {
+    left: 60%;
   }
 }

@@ -17,6 +17,25 @@
 
 @media (max-width: 320px){
 
+	//* ------------------------------prices-examples--------------------------//
+	.slaider-menu {
+		&__button {
+			button{
+				border: 0.5px solid #007E82;
+				span{
+					font-size: 24px;
+				}
+			}
+		}
+		&__button .active{
+			span:nth-child(2){
+				font-size: 14px;
+			}
+			span:nth-child(1){
+			}
+		}
+	}
+	//* ------------------------------prices-examples--------------------------//
 
     .description {
         &__text {
@@ -127,6 +146,34 @@
     .cover-arrow {
 		display: none;
 	}
+	//* --------------find out the price---------------/
+	.board{
+		&__button {
+			&_find-price{
+				button{
+				font-size: 12px;
+				}
+			}
+		}
+	}
+	//* --------------find out the price---------------/
 
+	//* ------------- stages of work ------------------/
+	.board {
 
+		&__title {
+
+		}
+
+		// .board__subtitle
+
+		&__subtitle {
+			&_stages-work{
+				span:last-child{
+					left: 60%;
+				}
+			}
+
+		}
+	}
 }
