@@ -275,8 +275,7 @@ var skmir = new function() {
 
             if($(window).width() <= 768) {
                 $('.header__titlelogo img').removeAttr('src')
-                $('.header__titlelogo img').attr('src','/img/finished/logo_2-1.svg')
-                $('.header__titlelogo a').append('<img src="/img/finished/logo_2-2.svg" alt="логотип" title="логотип"></a>');
+                $('.header__titlelogo img').attr('src','/img/finished/logo_3.svg')
             }
 
             $('.header__burger').click(function(e){
@@ -342,24 +341,20 @@ var skmir = new function() {
 
             if($(window).width() <= 1070) {
                 $('.stages-work__slider').slick({
-                    centerMode: true,
-                    centerPadding: '0',
-                    lazyLoad: 'ondemand',
-                    variableWidth: true,
-                    cssEase: 'linear',
+                    // centerMode: true,
+                    // centerPadding: '0',
                     speed:1000,
                     easing:'ease',
                     waitForAnimate:true,
-                    slidesToShow:1,
-                    slidesToScroll:1,
-                    infinite: true, //карусель
+                    slidesToShow: 1,
+
+                    infinite: false, //карусель
                     responsive:[
                         {
-                            breakpoint: 620,
+                            breakpoint: 768,
                             settings:{
                                 arrows:false,
                                 slidesToShow: 1,
-                                autoplay:false,
                                 slidesToScroll: 1,
                             }
                         }
