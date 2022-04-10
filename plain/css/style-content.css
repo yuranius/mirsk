@@ -2043,16 +2043,20 @@ html.active {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 80%;
-          flex: 0 1 80%;
   position: relative;
   padding: 0px 0px;
-  min-width: 0px;
+  min-width: 0;
 }
 
 .stages-work__slider button {
   border: none;
+}
+
+.stages-work__slider-wrapper {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 80%;
+          flex: 0 1 80%;
+  min-width: 0;
 }
 
 .rectangle {
@@ -2112,52 +2116,19 @@ html.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 800px !important;
 }
 
 /* Слайд */
-.slider__element.slick-slide {
-  opacity: 0.8;
-  -webkit-transform: scale(0.98);
-          transform: scale(0.98);
-  z-index: -1;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
 /* Слайд активный (показывается) */
-.slider__element.slick-slide.slick-active {
-  opacity: 0.9;
-  -webkit-transform: scale(0.98);
-          transform: scale(0.98);
-  z-index: -1;
-}
-
 /* Слайд основной */
 /* Слайд по центру */
-.slider__element.slick-slide.slick-center {
-  opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  z-index: 1;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
 /* Клонированный слайд */
-.slick-slide.slick-cloned {
-  opacity: 0.8;
-  z-index: -1;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
 /* Стрелка не активная */
 .slider__element {
   min-height: 790px;
   background-color: #404A54;
-  min-width: 130px;
-  max-width: 130px;
+  width: 160px;
+  margin-right: 20px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2205,6 +2176,10 @@ html.active {
   content: "•";
   margin-left: -11px;
   padding-right: 7px;
+}
+
+.slider__element:last-child {
+  margin-right: 0px;
 }
 
 .slider__element:last-child .element__clip {
@@ -2297,17 +2272,6 @@ html.active {
   .stages-work__clip_two {
     left: 75%;
   }
-  .stages-work__slider {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 80%;
-            flex: 0 1 80%;
-  }
   .rectangle_stages-work {
     right: 0;
   }
@@ -2334,10 +2298,18 @@ html.active {
     max-width: 350px;
   }
   .slider__element {
+    --widthVui: 100vw;
     margin-right: 20px;
+    min-width: calc((var(--widthVui) - 400px) / 7) !important;
+  }
+  .slider__element:last-child {
+    margin-right: 0px;
   }
   .slider__element:last-child img {
     display: block;
+  }
+  .slider__element:first-child {
+    margin-left: 20px;
   }
   .element__image {
     margin-top: 60px;
@@ -2362,12 +2334,51 @@ html.active {
   }
 }
 
+@media (max-width: 1200px) {
+  .slider__element {
+    --widthVui: 100vw;
+    min-width: calc((var(--widthVui) - 300px) / 5) !important;
+  }
+}
+
 @media (max-width: 768px) {
   .stages-work__board {
     min-height: 208px;
   }
   .stages-work__slider {
     overflow: hidden;
+  }
+  .board__text_stages-work {
+    margin-bottom: 0px;
+    margin-top: 0px !important;
+  }
+  .board__title_stages-work {
+    color: #404A54;
+  }
+  .board__subtitle_stages-work {
+    max-width: 120px;
+    color: #404A54;
+  }
+  .board__subtitle_stages-work span:last-child {
+    top: 0px;
+    left: 50%;
+    max-width: 150px;
+  }
+  .slider__element {
+    min-width: 130px;
+    min-height: 567px;
+  }
+  .slider__element h5 {
+    height: 250px;
+  }
+  .element__image {
+    margin-top: 30px;
+  }
+  .element__clip {
+    display: none;
+  }
+  .element__button {
+    top: 490px;
   }
 }
 
@@ -3633,41 +3644,6 @@ html.active {
   }
   .stages-work__clip {
     display: none;
-  }
-  .stages-work__slider {
-    max-width: 90vw;
-    margin-left: 5vw;
-  }
-  .board__text_stages-work {
-    margin-bottom: 0px;
-    margin-top: 0px !important;
-  }
-  .board__title_stages-work {
-    color: #404A54;
-  }
-  .board__subtitle_stages-work {
-    max-width: 120px;
-    color: #404A54;
-  }
-  .board__subtitle_stages-work span:last-child {
-    top: 0px;
-    left: 50%;
-    max-width: 150px;
-  }
-  .slider__element {
-    min-height: 567px;
-  }
-  .slider__element h5 {
-    height: 250px;
-  }
-  .element__image {
-    margin-top: 30px;
-  }
-  .element__clip {
-    display: none;
-  }
-  .element__button {
-    top: 490px;
   }
   .project-work__block {
     margin-top: 40px;

@@ -2674,13 +2674,17 @@ html.active{
 	&__slider {
 		display: flex;
 		justify-content: space-between;
-		flex: 0 1 80%;
 		position: relative; //*Для стрелок слайдера
 		padding: 0px 0px; //*Для стрелок слайдера
-		min-width: 0px;
+		min-width: 0;
 		button{
 			border: none;
 		}
+	}
+
+	&__slider-wrapper {
+		flex: 0 1 80%;
+		min-width: 0;
 	}
 }
 
@@ -2764,22 +2768,30 @@ html.active{
 	//! ВНИМАНИЕ!!! Когда слайдер находиться внутри FLAX-элемента или САМ ЯВЛЯЕТСЯ FLAX-элементом, тогда ОБЯЗАТЕЛЬНО для FLAX-элемента нуэжно указать параметр:
 	//&MIN-WIDTH:0;
 
+
 }
 /* Лента слайдов */
 .stages-work__slider .slick-track{
 	display: flex; //^ что бы слайды расположились в ряд
-	width: 800px !important;
 }
 /* Слайд */
-.slider__element.slick-slide{opacity: 0.8;transform: scale(0.98); z-index: -1; transition: all 0.3s ease 0s;}
+.slider__element.slick-slide{
+	// opacity: 0.8;transform: scale(0.98); z-index: -1; transition: all 0.3s ease 0s;
+}
 /* Слайд активный (показывается) */
-.slider__element.slick-slide.slick-active{opacity: 0.9;transform: scale(0.98);z-index: -1;}
+.slider__element.slick-slide.slick-active{
+	// opacity: 0.9;transform: scale(0.98);z-index: -1;
+}
 /* Слайд основной */
 .slider__element.slick-slide.slick-current{}
 /* Слайд по центру */
-.slider__element.slick-slide.slick-center{opacity: 1; transform: scale(1);z-index: 1; transition: all 0.3s ease 0s;}
+.slider__element.slick-slide.slick-center{
+	// opacity: 1; transform: scale(1);z-index: 1; transition: all 0.3s ease 0s;
+}
 /* Клонированный слайд */
-.slick-slide.slick-cloned{opacity: 0.8; z-index: -1; transition: all 0.3s ease 0s;}
+.slick-slide.slick-cloned{
+	// opacity: 0.8; z-index: -1; transition: all 0.3s ease 0s;
+}
 
 /* Стрелка не активная */
 .slick-arrow.slick-disabled{}
@@ -2795,8 +2807,8 @@ html.active{
 	&__element {
 		min-height: 790px;
 		background-color: #404A54;
-		min-width: 130px;
-		max-width: 130px;
+		width: 160px;
+		margin-right: 20px;
 		position: relative;
 		display:flex;
 		flex-direction: column;
@@ -2835,10 +2847,12 @@ html.active{
 	}
 
 	&__element:last-child{
+		margin-right: 0px;
 		.element__clip{
 			display: none;
 		}
 	}
+
 }
 
 .element {
@@ -2940,10 +2954,9 @@ html.active{
 		}
 
 		&__slider {
-			display: flex;
-			justify-content: space-between;
-			flex: 0 1 80%;
-
+			// display: flex;
+			// justify-content: space-between;
+			// flex: 0 1 80%;
 		}
 	}
 
@@ -2998,12 +3011,19 @@ html.active{
 
 
 		&__element {
+			--widthVui: 100vw;
 			margin-right: 20px;
+			min-width: calc((var(--widthVui) - 400px) / 7) !important;
 		}
 		&__element:last-child{
+			margin-right: 0px;
 			img{
 				display: block;
 			}
+		}
+
+		&__element:first-child{
+			margin-left: 20px;
 		}
 	}
 
@@ -3052,6 +3072,18 @@ html.active{
 	}
 }
 
+@media (max-width: 1200px){
+	.slider {
+		&__element {
+			--widthVui: 100vw;
+			min-width: calc((var(--widthVui) - 300px) / 5) !important;
+			// max-width: calc((var(--widthVui) - 100px) / 5) !important;;
+		}
+	}
+}
+
+
+
 @media (max-width: 768px){
 	.stages-work {
 
@@ -3076,6 +3108,7 @@ html.active{
 			// flex: 0 1 80%;
 			overflow: hidden;
 		}
+
 	}
 
 	.board {
@@ -3084,9 +3117,8 @@ html.active{
 
 		&__text {
 			&_stages-work{
-				// margin-top: 60px !important;
-				// height: 158px;
-				// margin-bottom: 60px;
+				margin-bottom: 0px;
+				margin-top: 0px !important;
 			}
 		}
 
@@ -3094,27 +3126,21 @@ html.active{
 
 		&__title {
 			&_stages-work{
-				// max-width: 500px;
-
+				color: #404A54;
 			}
 		}
 
+		// .board__subtitle
+
 		&__subtitle {
 			&_stages-work{
-				// max-width: 120px;
-				// font-size: 20px;
-			}
-			span{
-				// display: none;
-
-			}
-			span:last-child{
-				// display: block;
-				// content: '';
-				// position: absolute;
-				// top: 60px;
-				// left: 50%;
-				// max-width: 350px;
+				max-width: 120px;
+				color: #404A54;
+				span:last-child{
+					top: 0px;
+					left: 50%;
+					max-width: 150px;
+				}
 			}
 		}
 
@@ -3126,12 +3152,28 @@ html.active{
 		}
 	}
 
+	.slider {
+		&__element {
+			min-width: 130px;
+			min-height: 567px;
+			h5{height: 250px;}
+		}
+	}
 
+	.element {
 
+		&__image {
+			margin-top: 30px;
+		}
+		&__clip{
+			display: none;
+		}
+		// .element__button
 
-
-
-
+		&__button {
+			top: 490px;
+		}
+	}
 
 
 }

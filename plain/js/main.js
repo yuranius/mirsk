@@ -339,29 +339,41 @@ var skmir = new function() {
                 ]
             });
 
-            if($(window).width() <= 1070) {
+            // if($(window).width() <= 1070) {
                 $('.stages-work__slider').slick({
                     // centerMode: true,
                     // centerPadding: '0',
                     speed:1000,
                     easing:'ease',
                     waitForAnimate:true,
-                    slidesToShow: 1,
+                    slidesToShow: 7,
 
                     infinite: false, //карусель
                     responsive:[
                         {
+                            breakpoint: 1200,
+                            settings:{
+                                slidesToShow: 5,
+                                slidesToScroll: 2,
+                            },
+                            breakpoint: 900,
+                            settings:{
+                                slidesToShow: 4,
+                            },
                             breakpoint: 768,
                             settings:{
+                                slidesToShow: 3,
                                 arrows:false,
-                                slidesToShow: 1,
-                                slidesToScroll: 1,
+                            },
+                            breakpoint: 500,
+                            settings:{
+                                slidesToShow: 2,
                             }
                         }
                     ]
 
                 });
-            }
+            // }
 
 
                 $('.prices-examples__subslaider').slick({

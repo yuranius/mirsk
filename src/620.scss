@@ -449,75 +449,17 @@
                 display: none;
             }
             &__slider {
-                max-width: 90vw;
-                margin-left: 5vw;
+                // max-width: 90vw;
+                // margin-left: 5vw;
             }
 
         }
 
 
-        .board {
-
-            // .board__text
-
-            &__text {
-                &_stages-work{
-                    margin-bottom: 0px;
-                    margin-top: 0px !important;
-                }
-            }
-
-            // .board__title
-
-            &__title {
-                &_stages-work{
-                    color: #404A54;
-                }
-            }
-
-            // .board__subtitle
-
-            &__subtitle {
-                &_stages-work{
-                    max-width: 120px;
-                    color: #404A54;
-                    span:last-child{
-                        top: 0px;
-                        left: 50%;
-                        max-width: 150px;
-                    }
-                }
-            }
-
-        }
-
-        .slider {
-
-            // .slider__element
-
-            &__element {
-                min-height: 567px;
-
-                h5{height: 250px;}
-            }
-
-        }
 
 
-        .element {
 
-            &__image {
-                margin-top: 30px;
-            }
-            &__clip{
-                display: none;
-            }
-            // .element__button
 
-            &__button {
-                top: 490px;
-            }
-        }
 
 
     //* ------------- project and work ------------------/
