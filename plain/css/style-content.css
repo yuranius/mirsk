@@ -649,7 +649,7 @@ html.active {
       grid-template-rows: auto auto auto;
   -ms-grid-columns: auto 43%;
       grid-template-columns: auto 43%;
-      grid-template-areas: "header notepad" "slaider-menu notepad" "slaider notepad";
+      grid-template-areas: "header notepad" "slaider-menu notepad" "slaider notepad";
 }
 
 .prices-examples__header {
@@ -1111,7 +1111,7 @@ html.active {
   .prices-examples__block {
     -ms-grid-columns: auto 1fr;
         grid-template-columns: auto 1fr;
-        grid-template-areas: "header" "notepad" "slaider-menu" "slaider";
+        grid-template-areas: "header" "notepad" "slaider-menu" "slaider";
   }
   .prices-examples__header {
     margin-top: 0px;
@@ -2128,7 +2128,7 @@ html.active {
   min-height: 790px;
   background-color: #404A54;
   width: 160px;
-  margin-right: 20px;
+  margin-right: 25px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2346,27 +2346,13 @@ html.active {
     min-height: 208px;
   }
   .stages-work__slider {
-    overflow: hidden;
-  }
-  .board__text_stages-work {
-    margin-bottom: 0px;
-    margin-top: 0px !important;
-  }
-  .board__title_stages-work {
-    color: #404A54;
-  }
-  .board__subtitle_stages-work {
-    max-width: 120px;
-    color: #404A54;
-  }
-  .board__subtitle_stages-work span:last-child {
-    top: 0px;
-    left: 50%;
-    max-width: 150px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
   .slider__element {
     min-width: 130px;
     min-height: 567px;
+    margin-left: 20px;
   }
   .slider__element h5 {
     height: 250px;
@@ -2517,7 +2503,7 @@ html.active {
         grid-template-rows: auto;
   }
   .project-work__menu_one {
-        grid-template-areas: "one three" "two three" "four four";
+        grid-template-areas: "one three" "two three" "four four";
   }
   .project-work__menu li {
     list-style-type: none;
@@ -2549,7 +2535,7 @@ html.active {
     grid-area: five;
   }
   .project-work__menu_two {
-        grid-template-areas: "one three" "two four" "five five";
+        grid-template-areas: "one three" "two four" "five five";
   }
   .project-work__item:last-child {
     margin-bottom: 30px;
@@ -2712,6 +2698,10 @@ html.active {
 
 .board__button_example-project {
   margin-top: 90px;
+}
+
+.board__button_example-project-down {
+  display: none;
 }
 
 .clip {
@@ -2918,6 +2908,16 @@ html.active {
   }
   .example-project__item {
     --width: 100vw;
+  }
+  .board__button_example-project {
+    display: none;
+  }
+  .board__button_example-project-down {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    max-width: 70vw;
+    font-size: 14px;
   }
 }
 
@@ -3645,6 +3645,22 @@ html.active {
   .stages-work__clip {
     display: none;
   }
+  .stages-work .board__text_stages-work {
+    margin-bottom: 0px;
+    margin-top: 0px !important;
+  }
+  .stages-work .board__title_stages-work {
+    color: #404A54;
+  }
+  .stages-work .board__subtitle_stages-work {
+    color: #404A54;
+    max-width: 120px;
+  }
+  .stages-work .board__subtitle_stages-work span:last-child {
+    top: 0px;
+    left: 60%;
+    max-width: 150px;
+  }
   .project-work__block {
     margin-top: 40px;
   }
@@ -3775,8 +3791,9 @@ html.active {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .board__button_example-project button {
+  .board__button_example-project-down button {
     font-size: 14px;
+    line-height: 14px;
   }
 }
 
@@ -3826,6 +3843,9 @@ html.active {
   }
   .board__button_find-price button {
     font-size: 12px;
+  }
+  .stages-work__slider {
+    min-width: 0;
   }
   .board__subtitle_stages-work span:last-child {
     left: 60%;

@@ -6,9 +6,10 @@
 	}
 	.board{
 		&__button {
-			&_example-project{
+			&_example-project-down{
 				button{
 				font-size: 14px;
+				line-height: 14px;
 				}
 			}
 		}
@@ -159,6 +160,13 @@
 	//* --------------find out the price---------------/
 
 	//* ------------- stages of work ------------------/
+	.stages-work{
+		&__slider {
+			min-width: 0;
+			// margin-left: 20px;
+			// margin-right: 20px;
+		}
+	}
 	.board {
 
 		&__title {
@@ -174,6 +182,12 @@
 				}
 			}
 
+		}
+	}
+
+	.slider {
+		&__element {
+			// margin-left: 20px;
 		}
 	}
 }

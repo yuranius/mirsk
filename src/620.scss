@@ -453,6 +453,31 @@
                 // margin-left: 5vw;
             }
 
+            .board {
+                &__text {
+                    &_stages-work{
+                        margin-bottom: 0px;
+                        margin-top: 0px !important;
+                    }
+                }
+                &__title {
+                    &_stages-work{
+                        color: #404A54;
+                    }
+                }
+
+                &__subtitle {
+                    &_stages-work{
+                        color: #404A54;
+                        max-width: 120px;
+                        span:last-child{
+                            top: 0px;
+                            left: 60%;
+                            max-width: 150px;
+                        }
+                    }
+                }
+            }
         }
 
 

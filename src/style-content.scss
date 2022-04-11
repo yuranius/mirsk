@@ -2808,7 +2808,7 @@ html.active{
 		min-height: 790px;
 		background-color: #404A54;
 		width: 160px;
-		margin-right: 20px;
+		margin-right: 25px;
 		position: relative;
 		display:flex;
 		flex-direction: column;
@@ -3106,7 +3106,8 @@ html.active{
 			// display: flex;
 			// justify-content: space-between;
 			// flex: 0 1 80%;
-			overflow: hidden;
+			margin-left: 20px;
+			margin-right: 20px;
 		}
 
 	}
@@ -3115,34 +3116,19 @@ html.active{
 
 		// .board__text
 
-		&__text {
-			&_stages-work{
-				margin-bottom: 0px;
-				margin-top: 0px !important;
-			}
-		}
+
 
 		// .board__title
 
 		&__title {
 			&_stages-work{
-				color: #404A54;
+
 			}
 		}
 
 		// .board__subtitle
 
-		&__subtitle {
-			&_stages-work{
-				max-width: 120px;
-				color: #404A54;
-				span:last-child{
-					top: 0px;
-					left: 50%;
-					max-width: 150px;
-				}
-			}
-		}
+
 
 	}
 
@@ -3156,12 +3142,14 @@ html.active{
 		&__element {
 			min-width: 130px;
 			min-height: 567px;
+			margin-left: 20px;
 			h5{height: 250px;}
 		}
 	}
 
 	.element {
-
+		// --widthVui: 100vw;
+		// min-width: calc((var(--widthVui) - 300px) / 5) !important;
 		&__image {
 			margin-top: 30px;
 		}
@@ -3743,6 +3731,9 @@ html.active{
 		&_example-project{
 			margin-top: 90px;
 		}
+		&_example-project-down{
+			display: none;
+		}
 	}
 }
 .clip {
@@ -4025,6 +4016,21 @@ html.active{
 			--width: 100vw;
 		}
 	}
+	.board{
+		&__button {
+			&_example-project{
+				display: none;
+			}
+			&_example-project-down{
+				display: block;
+				margin: 0 auto;
+				margin-top: 20px;
+				max-width: 70vw;
+				font-size: 14px;
+			}
+		}
+	}
+
 }
 
 //* ------------- Why My ------------------/
