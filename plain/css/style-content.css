@@ -82,9 +82,17 @@ html.active {
   }
   .header__burger::before {
     top: 0px;
+    -webkit-transition: -webkit-transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: -webkit-transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
   .header__burger::after {
     bottom: 0px;
+    -webkit-transition: -webkit-transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: -webkit-transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
   .header__burger span {
     position: absolute;
@@ -95,16 +103,24 @@ html.active {
     top: 9px;
   }
   .header__burger.active::before {
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+    -webkit-transform: rotate(225deg);
+            transform: rotate(225deg);
     top: 9px;
     background-color: #007E82;
+    -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transition-delay: 75ms;
+            transition-delay: 75ms;
   }
   .header__burger.active::after {
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
+    -webkit-transform: rotate(-225deg);
+            transform: rotate(-225deg);
     bottom: 9px;
     background-color: #007E82;
+    -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transition-delay: 75ms;
+            transition-delay: 75ms;
   }
   .header__burger.active span {
     -webkit-transform: scale(0);
@@ -3229,7 +3245,7 @@ html.active {
   }
   .header__image_one {
     width: 300px;
-    height: 20px;
+    height: 15px;
     -webkit-box-flex: 0;
         -ms-flex: 0 1 auto;
             flex: 0 1 auto;

@@ -113,9 +113,11 @@ html.active{
 	}
 	&__burger::before{ //^ Первая линия
 		top: 0px;
+		transition: transform .275s cubic-bezier(.68,-.55,.265,1.55);
 	}
 	&__burger::after{ //^ Вторая линия
 		bottom: 0px;
+		transition: transform .275s cubic-bezier(.68,-.55,.265,1.55);
 	}
 
 	&__burger span{ //^ Третья линия
@@ -128,14 +130,18 @@ html.active{
 	}
 
 	&__burger.active::before{
-		transform: rotate(45deg);
+		transform: rotate(225deg);
 		top: 9px;
 		background-color: #007E82;
+		transition-timing-function: cubic-bezier(.68,-.55,.265,1.55);
+		transition-delay: 75ms;
 	}
 	&__burger.active::after{
-		transform: rotate(-45deg);
+		transform: rotate(-225deg);
 		bottom: 9px;
 		background-color: #007E82;
+		transition-timing-function: cubic-bezier(.68,-.55,.265,1.55);
+		transition-delay: 75ms;
 	}
 	&__burger.active span{
 		transform: scale(0);
@@ -4651,7 +4657,7 @@ html.active{
 			}
 			&_one{
 				width: 300px;
-				height: 20px;
+				height: 15px;
 				flex: 0 1 auto;
 				right: 0;
 				position: absolute;

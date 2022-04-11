@@ -276,6 +276,8 @@ var skmir = new function() {
             if($(window).width() <= 768) {
                 $('.header__titlelogo img').removeAttr('src')
                 $('.header__titlelogo img').attr('src','/img/finished/logo_3.svg')
+                $('.header__image_one img').attr('src','/img/finished/why-wilpaper/metall-after.jpg') //^ Плашка в секции Ответ-Вопрос
+
             }
 
             $('.header__burger').click(function(e){
