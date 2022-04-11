@@ -341,14 +341,11 @@ var skmir = new function() {
 
             if($(window).width() <= 1500) {
                 $('.stages-work__slider').slick({
-                    // centerMode: true,
-                    // centerPadding: '0',
                     speed:1000,
                     easing:'ease',
                     waitForAnimate:true,
                     slidesToShow: 7,
-
-                    infinite: false, //карусель
+                    infinite: false,
                     responsive:[
                         {
                             breakpoint: 1200,
@@ -356,32 +353,32 @@ var skmir = new function() {
                                 slidesToShow: 5,
                                 slidesToScroll: 2,
                             }},
-                            {
+                        {
                             breakpoint: 900,
                             settings:{
                                 slidesToShow: 4,
                             }},
-                            {
+                        {
                             breakpoint: 768,
                             settings:{
                                 slidesToShow: 3,
                                 arrows:false,
+                                dots: true,
                             }},
-
-                            {
+                        {
                             breakpoint: 550,
                             settings:{
                                 slidesToShow: 2,
                                 arrows:false,
+                                dots: true,
                             }},
-                            {
-                                breakpoint: 360,
-                                settings:{
-                                    // centerMode: true,
-                                    // centerPadding: '0',
-                                    slidesToShow: 1,
-                                    slidesToScroll: 1,
-                                    arrows:false,
+                        {
+                            breakpoint: 360,
+                            settings:{
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                arrows:false,
+                                dots: true,
                             }},
                     ]
 

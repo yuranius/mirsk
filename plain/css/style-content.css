@@ -2123,7 +2123,43 @@ html.active {
 /* Слайд основной */
 /* Слайд по центру */
 /* Клонированный слайд */
-/* Стрелка не активная */
+.stages-work__slider .slick-dots {
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.stages-work__slider .slick-dots li {
+  list-style: none;
+  margin: 10px 10px;
+}
+
+.stages-work__slider .slick-dots li.slick-active button {
+  background-color: transparent;
+  border: 1px solid #404A54;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.stages-work__slider .slick-dots li button {
+  font-size: 0;
+  width: 10px;
+  height: 15px;
+  background-color: #404A54;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  border: 1px solid #404A54;
+  cursor: pointer;
+}
+
 .slider__element {
   min-height: 790px;
   background-color: #404A54;
@@ -2271,6 +2307,12 @@ html.active {
   }
   .stages-work__clip_two {
     left: 75%;
+  }
+  .stages-work__slider {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .rectangle_stages-work {
     right: 0;
