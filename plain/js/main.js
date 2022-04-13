@@ -445,7 +445,7 @@ var skmir = new function() {
                     if (initSlaider == true) {
                     $('#overlay').fadeIn(250, function(){
                             $('#popupExamples').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
-                            $('body').css('overflow', 'hidden');
+                            $('body, html').css('overflow-y', 'hidden');
                             $('.prices-examples__price-list').css('display', 'none');
                             $('#popupExamples').append('<div class="super-slider"></div>');
                             $('.super-slider').append(subitemClone);
@@ -461,13 +461,11 @@ var skmir = new function() {
                             $('.prices-examples__price-list').css('display', 'block')
                             $(this).css('display', 'none');
                             $('#overlay').fadeOut(220);
-                            $('body').css('overflow', 'auto')
+                            $('body, html').css('overflow-y', 'hidden')
                             $('#popupExamples > div').remove();
                             subsliderInit();
                             initSlaider = true;
                     });
-
-
                 });
 
                 //* ------------------  Пример проекта-------------------->
@@ -511,7 +509,7 @@ var skmir = new function() {
                     if (initSlaiderExPr == true) {
                     $('#overlay').fadeIn(250, function(){
                             $('#popupProject').css('display', 'block').animate({opacity: 1, top: '55%'}, 490);
-                            $('body').css('overflow', 'hidden');
+                            $('body, html').css('overflow-y', 'hidden');
                             $('#popupProject').append('<div class="super-slider-ExPr"></div>');
                             $('.super-slider-ExPr').append(subitemCloneExPr);
                             subsliderInitExPr();
@@ -524,7 +522,7 @@ var skmir = new function() {
                     $('#popupProject').animate({opacity: 0, top: '35%'}, 490,function(){
                             $(this).css('display', 'none');
                             $('#overlay').fadeOut(220);
-                            $('body').css('overflow', 'auto')
+                            $('body, html').css('overflow-y', 'auto')
                             $('#popupProject > div').remove(); // удаляем его из попап
                             subsliderInitExPr();
                             initSlaiderExPr = true;
