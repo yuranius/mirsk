@@ -461,7 +461,7 @@ var skmir = new function() {
                             $('.prices-examples__price-list').css('display', 'block')
                             $(this).css('display', 'none');
                             $('#overlay').fadeOut(220);
-                            $('body, html').css('overflow-y', 'hidden')
+                            $('body, html').css('overflow-y', 'auto')
                             $('#popupExamples > div').remove();
                             subsliderInit();
                             initSlaider = true;
